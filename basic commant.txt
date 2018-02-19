@@ -1,0 +1,16 @@
+To upgrade all local packages; you could use pip-review:
+
+$ pip install pip-review
+$ pip-review --local --interactive
+
+-- panda tutorial library
+
+pip install markdown
+pip install numexpr
+pip install bottleneck
+pip install pandas-datareader
+pip install xlsxwriter
+pip install openpyxl
+
+
+Microsoft Visual C++ 14.0
