@@ -98,3 +98,53 @@ google=pd.read_csv("practice_csv//google_stock_price.csv",squeeze=True)
 # print(pokemon1.get(key=["Electrode","Charmander"])) # extract element using index postion
 
 print(pokemon1.get(key=["Electrode","Charmand"]))# in Case element is not present NaN and future warning message will be returened
+
+# Maths methods
+
+print(google.count()) #len function  will give same results if no blank value is present
+print(google.mean())
+print(google.median())
+print(google.sum())
+print(google.max())
+print(google.min())
+print(google.describe())
+
+# Data Analysis with Pandas and Python
+
+print(google[google.idxmax()]) # .idxmax() methods to extract the index positions of the highest values in a Series
+print(google[google.idxmin()]) # .idxmin() methods to extract the index positions of the lowest values in a Series
+
+# value_counts() method to count the number of the times each unique value occurs in a Series.(similar to excel Pivot)
+# The result will be a brand new Series where each unique value from the original Series serves as an index label.
+
+print(pokemon1.value_counts(ascending=True))
+
+# .apply() Method
+# feed it a Python function as an argument to use the function on every Series value. This is helpful for executing custom operations that are not included in pandas or numpy
+
+def classify_performance(number):
+    if number<300:
+        return "OK"
+    elif number>=300 and number <650:
+        return "Satisfactory"
+    else:
+        return "Incredible!"
+
+print(google.apply(classify_performance))
+
+# if the logic is not complex we can write lambda or anonymous function
+
+print(google.apply(lambda stock_price : stock_price + 1)) # Simple function to add 1 dollor to all share prices
+
+# Map method (similar to excel VLOOKUP)
+# .map() method to tie together the values from one object(series) to another(collection). Mainly between two files
+
+print(pokemon.map(pokemon1)) # map will look for value of pokemon object into values of pokemon1 object uusing index and return the type
+
+pokemon_dict=pokemon1.to_dict() # to convert series into dictionary
+
+print("series to dict map")
+# print('First 5 element in pokemon dict is %s' %pokemon_dict.head())
+
+print(pokemon.map(pokemon_dict))
+
