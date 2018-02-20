@@ -22,22 +22,25 @@ nba=pd.read_csv("practice_csv/nba.csv")
 # difference  between shared methods
 
 rev=pd.read_csv("practice_csv/revenue.csv",index_col="Date")
-print(rev)
-s=pd.Series([1,2,3])
-print(s.sum()) # will show sum of series
-
-print(rev.sum()) # sum by column wise or  index wise
-
-print(rev.sum(axis="columns"))
-
-
-
-# # .value_counts method review
+# print(rev)
+# s=pd.Series([1,2,3])
+# print(s.sum()) # will show sum of series
 #
-# print((nba["Position"].value_counts().head(1))) # Most popular postion in NBA team
-# print((nba["Weight"].value_counts().tail())) # Most common weight in NBA team
-# print(nba["Salary"].value_counts().head(5)) # Most popular salary in NBA team
+# print(rev.sum()) # sum by column wise or  index wise
 #
+# print(rev.sum(axis="columns"))
+
+# select one column from data frame
+
+# print(nba["Name"])  # to select one column
+# print(type(nba["Name"]))  # single column in dataframe is series
+#
+# print(nba[["Name","Salary"]].head(5))  # to select more than one  column
+#
+# select_col=["Name","Salary"]
+# print(nba[select_col].tail(5))  # to select more than one column in better way
+
+
 # # Add new column in panda dataframe
 # # assign scalar value to sport column
 #
@@ -49,7 +52,28 @@ print(rev.sum(axis="columns"))
 #
 # print(nba.head(3))
 #
-# # Broadcasting Operation
+# # Broadcasting Operation -A broadcasting operation performs an operation on all values within a pandas object
+# we'll apply mathematical operations to values in a DataFrame column (i.e. a Series) including the .add(), .sub(), .mul() and .div() methods as well as operator to do same function
+
+print(nba["Age"].add(5).head(3))
+print(nba["Age"].head(3)+5)  # addition operation using + operator
+
+print(nba["Age"].sub(5).head(3))
+print(nba["Age"].head(3)-5)
+
+print(nba["Weight"].mul(.453592).head(3))  #display Weight in Kg
+print(nba["Weight"].head(3)*.453592)
+
+print(nba["Salary"].div(1000000).head(3))  # display salary in Million
+print(nba["Salary"].head(3)/.1000000)
+
+nba.insert(7,column="Weight in Kg",value=nba["Weight"]*.453592)  # add derived column to existing data frame
+
+print(nba.head(3))
+
+# # .value_counts method review
 #
-#
+# print((nba["Position"].value_counts().head(1))) # Most popular postion in NBA team
+# print((nba["Weight"].value_counts().tail())) # Most common weight in NBA team
+# print(nba["Salary"].value_counts().head(5)) # Most popular salary in NBA team
 #
