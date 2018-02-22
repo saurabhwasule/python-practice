@@ -1,0 +1,60 @@
+div.tabs {
+	margin: 0px 0px 5px;
+}
+ul.primary {
+	width: 99%;
+}
+ul.secondary {
+	width: 99%;
+}
+ul.primary {
+	background: url("../images/tabs/tab-bar.png") repeat-x left bottom; border-width: 0px; list-style: none; margin: 0px; padding: 0px 0px 0px 10px; line-height: normal; white-space: nowrap;
+}
+ul.primary li {
+	margin: 0px; padding: 0px; float: left;
+}
+ul.primary li.active a {
+	background: url("../images/tabs/tab-left.png") no-repeat left 0px; border-width: 0px; color: black;
+}
+ul.primary li.active a:hover {
+	background: url("../images/tabs/tab-left.png") no-repeat left 0px; border-width: 0px; color: black;
+}
+ul.primary li.active a .tab {
+	background: url("../images/tabs/tab-right.png") no-repeat right 0px;
+}
+ul.primary li.active a:hover .tab {
+	background: url("../images/tabs/tab-right.png") no-repeat right 0px;
+}
+ul.primary li a {
+	background: url("../images/tabs/tab-left.png") no-repeat left -38px; border-width: 0px; margin: 0px; padding: 0px 0px 0px 5px; height: 24px; color: rgb(119, 119, 119); text-decoration: none; display: block; font-weigh: bold;
+}
+ul.primary li a:hover {
+	background: url("../images/tabs/tab-left.png") no-repeat left -76px; border-width: 0px;
+}
+ul.primary li a:hover .tab {
+	background: url("../images/tabs/tab-right.png") no-repeat right -76px;
+}
+ul.primary li a .tab {
+	background: url("../images/tabs/tab-right.png") no-repeat right -38px; border-width: 0px; margin: 0px; padding: 4px 13px 0px 6px; height: 20px; line-height: 20px; display: block;
+}
+ul.secondary {
+	background: url("../images/tabs/tab-secondary-bg.png") repeat-x left bottom; list-style: none; margin: 0px; padding: 0px 0px 0px 5px; border-bottom-color: silver; border-bottom-width: 1px; border-bottom-style: solid; white-space: nowrap;
+}
+ul.secondary li {
+	margin: 0px 5px 0px 0px; padding: 5px 0px; border-right-color: currentColor; border-right-width: medium; border-right-style: none; float: left;
+}
+ul.secondary a {
+	background: url("../images/tabs/tab-secondary.png") repeat-x left -56px; margin: 0px; padding: 0px; border: 1px solid silver; border-image: none; height: 24px; color: rgb(119, 119, 119); text-decoration: none; display: block;
+}
+ul.secondary a .active {
+	background: url("../images/tabs/tab-secondary.png") repeat-x left top; border: 1px solid silver; border-image: none; color: black;
+}
+ul.secondary a .active:hover {
+	background: url("../images/tabs/tab-secondary.png") repeat-x left top; border: 1px solid silver; border-image: none; color: black;
+}
+ul.secondary a:hover {
+	background: url("../images/tabs/tab-secondary.png") repeat-x left bottom;
+}
+ul.secondary a .tab {
+	margin: 0px; padding: 3px 8px; height: 18px; line-height: 18px; display: block;
+}

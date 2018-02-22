@@ -1,0 +1,162 @@
+* {
+	margin: 0px; padding: 0px;
+}
+.clearfix {
+	display: inline-block;
+}
+.clearfix::after {
+	height: 0px; clear: both; display: block; visibility: hidden; content: ".";
+}
+* html .clearfix {
+	height: 1%;
+}
+.clearfix {
+	display: block;
+}
+.clearleft {
+	clear: left;
+}
+.clearl {
+	clear: left;
+}
+.cleft {
+	clear: left;
+}
+.clearright {
+	clear: right;
+}
+.clearr {
+	clear: right;
+}
+.cright {
+	clear: right;
+}
+.clear {
+	clear: both;
+}
+.clearboth {
+	clear: both;
+}
+.clearall {
+	clear: both;
+}
+.floatleft {
+	margin: 0px 10px 5px 0px; float: left;
+}
+.fleft {
+	margin: 0px 10px 5px 0px; float: left;
+}
+.floatl {
+	margin: 0px 10px 5px 0px; float: left;
+}
+.floatright {
+	margin: 0px 0px 5px 10px; float: right;
+}
+.fright {
+	margin: 0px 0px 5px 10px; float: right;
+}
+.floatr {
+	margin: 0px 0px 5px 10px; float: right;
+}
+#skip a:link {
+	left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; position: absolute;
+}
+#skip a:hover {
+	left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; position: absolute;
+}
+#skip a:visited {
+	left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; position: absolute;
+}
+#skip a:active {
+	width: auto; height: auto; position: static;
+}
+#skip a:focus {
+	width: auto; height: auto; position: static;
+}
+div.view div.views-admin-links {
+	width: auto;
+}
+div.block {
+	position: relative;
+}
+div.block .edit {
+	padding: 3px 8px 0px; border: 1px solid rgb(204, 204, 204); border-image: none; top: -5px; right: -20px; line-height: 16px; font-size: 10px; display: none; position: absolute; z-index: 40; background-color: white; -moz-border-radius: 3px; -webkit-border-radius: 3px; -moz-box-shadow: 0 1px 3px #888888; -webkit-box-shadow: -1px 1px 2px #666666;
+}
+div.block .edit a {
+	margin: 0px; padding: 0px; border: 0px currentColor; border-image: none; display: block;
+}
+div.block:hover .edit {
+	display: block;
+}
+.with-wireframes #header {
+	padding: 2px; border: 1px solid rgb(187, 187, 187); border-image: none;
+}
+.with-wireframes #content-top {
+	padding: 2px; border: 1px solid rgb(187, 187, 187); border-image: none;
+}
+.with-wireframes #content-top > * {
+	padding: 2px; border: 1px solid rgb(187, 187, 187); border-image: none;
+}
+.with-wireframes #content-header {
+	padding: 2px; border: 1px solid rgb(187, 187, 187); border-image: none;
+}
+.with-wireframes #content-header > * {
+	padding: 2px; border: 1px solid rgb(187, 187, 187); border-image: none;
+}
+.with-wireframes #content-area {
+	padding: 2px; border: 1px solid rgb(187, 187, 187); border-image: none;
+}
+.with-wireframes #content-area > * {
+	padding: 2px; border: 1px solid rgb(187, 187, 187); border-image: none;
+}
+.with-wireframes #content-bottom {
+	padding: 2px; border: 1px solid rgb(187, 187, 187); border-image: none;
+}
+.with-wireframes #content-bottom > * {
+	padding: 2px; border: 1px solid rgb(187, 187, 187); border-image: none;
+}
+.with-wireframes #primary {
+	padding: 2px; border: 1px solid rgb(187, 187, 187); border-image: none;
+}
+.with-wireframes #secondary {
+	padding: 2px; border: 1px solid rgb(187, 187, 187); border-image: none;
+}
+.with-wireframes #sidebar-left-inner {
+	padding: 2px; border: 1px solid rgb(187, 187, 187); border-image: none;
+}
+.with-wireframes #sidebar-right-inner {
+	padding: 2px; border: 1px solid rgb(187, 187, 187); border-image: none;
+}
+.with-wireframes .block {
+	padding: 2px; border: 1px solid rgb(187, 187, 187); border-image: none;
+}
+.with-wireframes .node {
+	margin-bottom: 10px; border-bottom-color: rgb(187, 187, 187); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.with-wireframes .block {
+	margin-bottom: 3px;
+}
+.with-wireframes #content-top {
+	margin: 0px 3px 3px;
+}
+.with-wireframes #content-header {
+	margin: 0px 3px 3px;
+}
+.with-wireframes #content-area {
+	margin: 0px 3px 3px;
+}
+.with-wireframes #content-bottom {
+	margin: 0px 3px 3px;
+}
+.with-wireframes #footer {
+	padding: 2px; border: 1px solid rgb(204, 204, 204); border-image: none; margin-top: 3px;
+}
+.with-navigation.with-wireframes #content {
+	margin-top: 50px;
+}
+.with-navigation.with-wireframes .sidebar {
+	margin-top: 50px;
+}
+.with-wireframes #navigation {
+	height: 50px;
+}

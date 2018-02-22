@@ -1,0 +1,33 @@
+ul.menu {
+	list-style: none; border: currentColor; border-image: none; text-align: left;
+}
+ul.menu li {
+	margin: 0px 0px 0px 0.5em;
+}
+li.expanded {
+	margin: 0px; padding: 0.2em 0.5em 0px 0px; list-style-type: circle; list-style-image: url("../../misc/menu-expanded.png");
+}
+li.collapsed {
+	margin: 0px; padding: 0.2em 0.5em 0px 0px; list-style-type: disc; list-style-image: url("../../misc/menu-collapsed.png");
+}
+li.leaf {
+	margin: 0px; padding: 0.2em 0.5em 0px 0px; list-style-type: square; list-style-image: url("../../misc/menu-leaf.png");
+}
+li a.active {
+	color: rgb(0, 0, 0);
+}
+td.menu-disabled {
+	background: rgb(204, 204, 204);
+}
+ul.links {
+	margin: 0px; padding: 0px;
+}
+ul.inline.links {
+	display: inline;
+}
+ul.links li {
+	padding: 0px 0.5em; display: inline; list-style-type: none;
+}
+.block ul {
+	margin: 0px; padding: 0px 0px 0.25em 1em;
+}

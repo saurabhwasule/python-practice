@@ -1,0 +1,880 @@
+Microsoft Windows [Version 6.3.9600]
+(c) 2013 Microsoft Corporation. All rights reserved.
+
+D:\PPT>cd python/hands
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> quit()
+
+D:\PPT\python\hands>set PATH=C:\FAST\python\3.5.2;%PATH%
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> a = 1
+>>> type(a)
+<class 'int'>
+>>> f = 1.2
+>>> type(f)
+<class 'float'>
+>>> s = "OK"
+>>> type(s)
+<class 'str'>
+>>> a + 1
+2
+>>> a / 1
+1.0
+>>> a / 2
+0.5
+>>> a // 2
+0
+>>> a % 2
+1
+>>> a ** 4
+1
+>>> a == 1
+True
+>>> b = True
+>>> type(b)
+<class 'bool'>
+>>> b = False
+>>> type(b)
+<class 'bool'>
+>>> a >= 1
+True
+>>> a <=1
+True
+>>> a != 1
+False
+>>> a < 1 and f == 3.0
+False
+>>> a < 1 or f == 3.0
+False
+>>> not a < 1
+True
+>>> a
+1
+>>> a / 2.0
+0.5
+>>> a = 1
+>>> if a == 1:
+...     print(a)
+...
+1
+>>> from __future__ import print_function
+>>> if a == 1:
+...     print(a)
+...
+1
+>>> if a == 1:
+... print(a)
+  File "<stdin>", line 2
+    print(a)
+        ^
+IndentationError: expected an indented block
+>>>
+>>> if a == 1:
+...     print(a)
+...     print(a)
+...     print(a)
+...
+1
+1
+1
+>>> if a == 1:
+...     print(a)
+... else:
+...     print(a)
+...
+1
+>>> if a == 1:
+...     print(a)
+... elif a == 2:
+...     print(a)
+... else:
+...     print(a)
+...
+1
+>>> quit()
+
+D:\PPT\python\hands>python first.py Hello
+Hello
+
+D:\PPT\python\hands>python first.py Hello World
+HelloWorld
+
+D:\PPT\python\hands>python first.py  1 2
+12
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> a = 1
+>>> s = "1"
+>>> type(a)
+<class 'int'>
+>>> type(s)
+<class 'str'>
+>>> int(s)
+1
+>>> s
+'1'
+>>> a
+1
+>>> str(a)
+'1'
+>>> float(1)
+1.0
+>>> float("1.0")
+1.0
+>>> bool(1)
+True
+>>> from __future__ import print_function
+>>> help(print)
+Help on built-in function print in module builtins:
+
+print(...)
+    print(value, ..., sep=' ', end='\n', file=sys.stdout, fl
+ush=False)
+
+    Prints the values to a stream, or to sys.stdout by defau
+lt.
+    Optional keyword arguments:
+    file:  a file-like object (stream); defaults to the curr
+ent sys.stdout.
+    sep:   string inserted between values, default a space.
+    end:   string appended after the last value, default a n
+ewline.
+    flush: whether to forcibly flush the stream.
+
+>>> print(1,2,3,4)
+1 2 3 4
+>>> print(1,2,3,4, sep=":")
+1:2:3:4
+>>> print(1,2,3,4, sep=":", end ="**")
+1:2:3:4**>>>
+>>>
+>>>
+>>> s = "OK"
+>>> s = 'OK'
+>>> type(s)
+<class 'str'>
+>>> ss = """Hello
+... World"""
+>>> type(s)
+<class 'str'>
+>>> type(ss)
+<class 'str'>
+>>> ss
+'Hello\nWorld'
+>>> s = "Hello"
+>>> len(s)
+5
+>>> "He" in s
+True
+>>> "he" not in s
+True
+>>> s == "He
+  File "<stdin>", line 1
+    s == "He
+           ^
+SyntaxError: EOL while scanning string literal
+>>> s == "He"
+False
+>>> s != "He"
+True
+>>> for element in s:
+...     print(element)
+...
+H
+e
+l
+l
+o
+>>> for e in s:
+...     print(e)
+...
+H
+e
+l
+l
+o
+>>>
+>>> s = "Hello World"
+>>> quit()
+
+D:\PPT\python\hands>python first.py
+H 1
+e 1
+l 3
+l 3
+o 2
+  1
+W 1
+o 2
+r 1
+l 3
+d 1
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> s = "Hello"
+>>> len(s)
+5
+>>> s[0]
+'H'
+>>> s[len(s)-1]
+'o'
+>>> s[-1]
+'o'
+>>> s[-5]
+'H'
+>>> s[0] = 'K'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment
+>>> s
+'Hello'
+>>> s = 2
+>>> s = "Hello"
+>>> s[0]
+'H'
+>>> s[1] = "K"
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment
+>>> s
+'Hello'
+>>> s[0]
+'H'
+>>> s[-1]
+'o'
+>>> s = "Hello World"
+>>> s[0:5]
+'Hello'
+>>> #s[start:end:step]
+...
+>>> s[0:5:2]
+'Hlo'
+>>> s[0],s[2],s[4]
+('H', 'l', 'o')
+>>> s[::2]
+'HloWrd'
+>>> s[::-1]
+'dlroW olleH'
+>>> s[-7:-3:1]
+'o Wo'
+>>> s[7:3:-1]
+'oW o'
+>>> s
+'Hello World'
+>>> ss = s + " OK"
+>>> ss
+'Hello World OK'
+>>> s
+'Hello World'
+>>> "OK" * 4
+'OKOKOKOK'
+>>> "%d %s %3.2f" % (1, "OK", 345.6444)
+'1 OK 345.64'
+>>> "%d %s %03.2f" % (1, "OK", 45.6444)
+'1 OK 45.64'
+>>> s
+'Hello World'
+>>> type(s)
+<class 'str'>
+>>> dir(str)
+['__add__', '__class__', '__contains__', '__delattr__', '__d
+ir__', '__doc__', '__eq__', '__format__', '__ge__', '__getat
+tribute__', '__getitem__', '__getnewargs__', '__gt__', '__ha
+sh__', '__init__', '__iter__', '__le__', '__len__', '__lt__'
+, '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '
+__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setat
+tr__', '__sizeof__', '__str__', '__subclasshook__', 'capital
+ize', 'casefold', 'center', 'count', 'encode', 'endswith', '
+expandtabs', 'find', 'format', 'format_map', 'index', 'isaln
+um', 'isalpha', 'isdecimal', 'isdigit', 'isidentifier', 'isl
+ower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'is
+upper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'pa
+rtition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition
+', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith',
+'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+
+>>> help(str.split)
+Help on method_descriptor:
+
+split(...)
+    S.split(sep=None, maxsplit=-1) -> list of strings
+
+    Return a list of the words in S, using sep as the
+    delimiter string.  If maxsplit is given, at most maxspli
+t
+    splits are done. If sep is not specified or is None, any
+    whitespace string is a separator and empty strings are
+    removed from the result.
+
+>>> s.split(" ")
+['Hello', 'World']
+>>> s
+'Hello World'
+>>> len(s)
+11
+>>> help(str.strip)
+Help on method_descriptor:
+
+strip(...)
+    S.strip([chars]) -> str
+
+    Return a copy of the string S with leading and trailing
+    whitespace removed.
+    If chars is given and not None, remove characters in cha
+rs instead.
+
+>>>
+>>> l = [1, 2.0, "OK", [1,2,3]]
+>>> len(l)
+4
+>>> 2.0 in l
+True
+>>> 2.0 not in l
+False
+>>> l == [1,2,3]
+False
+>>> l != [1,2,3]
+True
+>>> for e in l:
+...     print(e)
+...
+1
+2.0
+OK
+[1, 2, 3]
+>>> l[0]
+1
+>>> l[1]
+2.0
+>>> l[-1]
+[1, 2, 3]
+>>> l[-1] = 4
+>>> l
+[1, 2.0, 'OK', 4]
+>>> l
+[1, 2.0, 'OK', 4]
+>>> lst = l + [5,6]
+>>> lst
+[1, 2.0, 'OK', 4, 5, 6]
+>>> l
+[1, 2.0, 'OK', 4]
+>>> l += [7,8]
+>>> l
+[1, 2.0, 'OK', 4, 7, 8]
+>>> l.append(99)
+>>> l
+[1, 2.0, 'OK', 4, 7, 8, 99]
+>>> l
+[1, 2.0, 'OK', 4, 7, 8, 99]
+>>> l.append([7])
+>>> l
+[1, 2.0, 'OK', 4, 7, 8, 99, [7]]
+>>> l
+[1, 2.0, 'OK', 4, 7, 8, 99, [7]]
+>>> lst = l + [8]
+>>> lst
+[1, 2.0, 'OK', 4, 7, 8, 99, [7], 8]
+>>>
+>>> "ok"
+'ok'
+>>> [1,2]
+[1, 2]
+>>> [2]
+[2]
+>>> []
+[]
+>>> l = [1,2,3,4,5]
+>>> res = [1,4,9,16,25]
+>>> res = []
+>>> for e in l:
+...     res.append(e*e)
+...
+>>> res
+[1, 4, 9, 16, 25]
+>>> l = [1,2,3,4,5]
+>>> res = [1,3,5]
+>>> 3 % 2 == 1
+True
+>>> 3 % 2 == 0
+False
+>>> res = []
+>>> for e in l:
+...     if e % 2 == 1:
+...             res.append(e)
+...
+>>> res
+[1, 3, 5]
+>>> res = []
+>>> for e in l:
+...     if e % 2 == 1:
+...             res.append(e*e)
+...
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> s = "[1,2,3,4]"
+>>> res = [1,2,3,4]
+>>> res = []
+>>> s1= s.strip('[]')
+>>> s1
+'1,2,3,4'
+>>> s2 = s1.split(",")
+>>> s2
+['1', '2', '3', '4']
+>>> for e in s2:
+...     res.append(int(e))
+...
+>>> res
+[1, 2, 3, 4]
+>>> res = []
+>>> for e in s.strip('[]').split(','):
+...     res.append(int(e))
+...
+>>> res
+[1, 2, 3, 4]
+>>>
+>>>
+>>>
+>>> l
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'l' is not defined
+>>> l = [0,1,2,3,4]
+>>> l = list(range(5))
+>>> l
+[0, 1, 2, 3, 4]
+>>> l = list(range(0,5,1))
+>>> l
+[0, 1, 2, 3, 4]
+>>> l + [5,6]
+[0, 1, 2, 3, 4, 5, 6]
+>>> l * 4
+[0, 1, 2, 3, 4, 0, 1, 2, 3, 4, 0, 1, 2, 3, 4, 0, 1, 2, 3, 4]
+
+>>> l
+[0, 1, 2, 3, 4]
+>>> l[0]
+0
+>>> l[-1]
+4
+>>> l[::-1]
+[4, 3, 2, 1, 0]
+>>> l[0:3:1]
+[0, 1, 2]
+>>> l[:]
+[0, 1, 2, 3, 4]
+>>> l
+[0, 1, 2, 3, 4]
+>>> l[:0] = [99]
+>>> l
+[99, 0, 1, 2, 3, 4]
+>>> l[len(l):] = [77]
+>>> l
+[99, 0, 1, 2, 3, 4, 77]
+>>> l[2:2] = [66]
+>>> l
+[99, 0, 66, 1, 2, 3, 4, 77]
+>>> l = [99, 0, 1, 2, 3, 4, 77]
+>>> l[2:3] = [66]
+>>> l
+[99, 0, 66, 2, 3, 4, 77]
+>>> l[0:3] = [44]
+>>> l
+[44, 2, 3, 4, 77]
+>>> l
+[44, 2, 3, 4, 77]
+>>> l[::2] = ["OK"] * len(l[::2])
+>>> l = [44, 2, 3, 4, 77]
+>>> l[::2]
+[44, 3, 77]
+>>> len([44, 3, 77])
+3
+>>> ["OK"] * 3
+['OK', 'OK', 'OK']
+>>> l[::2] = ['OK', 'OK', 'OK']
+>>> l
+['OK', 2, 'OK', 4, 'OK']
+>>> l = [1,2,3,4]
+>>> type(l)
+<class 'list'>
+>>> list("OKU")
+['O', 'K', 'U']
+>>> dir(list)
+['__add__', '__class__', '__contains__', '__delattr__', '__d
+elitem__', '__dir__', '__doc__', '__eq__', '__format__', '__
+ge__', '__getattribute__', '__getitem__', '__gt__', '__hash_
+_', '__iadd__', '__imul__', '__init__', '__iter__', '__le__'
+, '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__re
+duce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmu
+l__', '__setattr__', '__setitem__', '__sizeof__', '__str__',
+ '__subclasshook__', 'append', 'clear', 'copy', 'count', 'ex
+tend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort'
+]
+>>> l
+[1, 2, 3, 4]
+>>> del l[-1]
+>>> l
+[1, 2, 3]
+>>> l
+[1, 2, 3]
+>>> c = 0
+>>> while c < 3:
+...     l = [l]
+...     c += 1
+...
+>>>
+>>> l
+[[[[1, 2, 3]]]]
+>>> type(l)
+<class 'list'>
+>>> len(l)
+1
+>>> l[0]
+[[[1, 2, 3]]]
+>>> type(l[0])
+<class 'list'>
+>>> len(l[0])
+1
+>>> l[0][0]
+[[1, 2, 3]]
+>>> l[0][0][0]
+[1, 2, 3]
+>>> l[0][0][0][-1] = 30
+>>> l
+[[[[1, 2, 30]]]]
+>>>
+>>>
+>>> l = [1,2,3]
+>>> l2 = [l,l,l]
+>>> l2
+[[1, 2, 3], [1, 2, 3], [1, 2, 3]]
+>>> l2[-1][-1] = 30
+>>> l2
+[[1, 2, 30], [1, 2, 30], [1, 2, 30]]
+>>> l
+[1, 2, 30]
+>>> l
+[1, 2, 30]
+>>> l2 = [l[:], l.copy(), l[:]]
+>>> l2
+[[1, 2, 30], [1, 2, 30], [1, 2, 30]]
+>>> l2[-1][-1] = 70
+>>> l2
+[[1, 2, 30], [1, 2, 30], [1, 2, 70]]
+>>> l
+[1, 2, 30]
+>>> l
+[1, 2, 30]
+>>> t = tuple(l)
+>>> t
+(1, 2, 30)
+>>> type(t)
+<class 'tuple'>
+>>> t = (1,2,3)
+>>> t = (1,2,3,3)
+>>> t
+(1, 2, 3, 3)
+>>> t[0]
+1
+>>> t[0] = 90
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+>>> len(t)
+4
+>>> 3 in t
+True
+>>>
+>>> for e in t:
+...     print(e)
+...
+1
+2
+3
+3
+>>> t1 = t + (2,3)
+>>> t
+(1, 2, 3, 3)
+>>> t1
+(1, 2, 3, 3, 2, 3)
+>>> t1.append(3,4)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'tuple' object has no attribute 'append'
+>>>  t += (3,4)
+  File "<stdin>", line 1
+    t += (3,4)
+    ^
+IndentationError: unexpected indent
+>>> t += (3,4)
+>>> t
+(1, 2, 3, 3, 3, 4)
+>>> t = t + (3,4)
+>>> t = (1,2,3)
+>>> tmp = t + (2,3)
+>>> t = tmp
+>>> t
+(1, 2, 3, 2, 3)
+>>> dir(t)
+['__add__', '__class__', '__contains__', '__delattr__', '__d
+ir__', '__doc__', '__eq__', '__format__', '__ge__', '__getat
+tribute__', '__getitem__', '__getnewargs__', '__gt__', '__ha
+sh__', '__init__', '__iter__', '__le__', '__len__', '__lt__'
+, '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex
+__', '__repr__', '__rmul__', '__setattr__', '__sizeof__', '_
+_str__', '__subclasshook__', 'count', 'index']
+>>> dir(list)
+['__add__', '__class__', '__contains__', '__delattr__', '__d
+elitem__', '__dir__', '__doc__', '__eq__', '__format__', '__
+ge__', '__getattribute__', '__getitem__', '__gt__', '__hash_
+_', '__iadd__', '__imul__', '__init__', '__iter__', '__le__'
+, '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__re
+duce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmu
+l__', '__setattr__', '__setitem__', '__sizeof__', '__str__',
+ '__subclasshook__', 'append', 'clear', 'copy', 'count', 'ex
+tend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort'
+]
+>>>
+>>>
+>>> l = [1,2,3,4]
+>>> l = [1,2,3,4,4,5]
+>>> set(l)
+{1, 2, 3, 4, 5}
+>>> s = { 1,2,3,1,2,3}
+>>> s
+{1, 2, 3}
+>>> len(s)
+3
+>>> 2 in s
+True
+>>> s
+{1, 2, 3}
+>>> 3 not in s
+False
+>>> s
+{1, 2, 3}
+>>> s = {1,2,3,4}
+>>> s
+{1, 2, 3, 4}
+>>> len(s)
+4
+>>> 4 in s
+True
+>>> s
+{1, 2, 3, 4}
+>>> s == {4,3,2,1}
+True
+>>> (1,2) == (2,1)
+False
+>>> for e in s:
+...     print(e)
+...
+1
+2
+3
+4
+>>> s[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'set' object does not support indexing
+>>> s.append(3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'set' object has no attribute 'append'
+>>> s.add(6)
+>>> s
+{1, 2, 3, 4, 6}
+>>> set("HHHHLLL")
+{'L', 'H'}
+>>> s1 = {1,2,3}
+>>> s2 = {2,3,4}
+>>> s1 & s2
+{2, 3}
+>>> s1 + s2
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unsupported operand type(s) for +: 'set' and 'set
+'
+>>> s1 | s2
+{1, 2, 3, 4}
+>>> s1 - s2
+{1}
+>>> s1 ^ s2
+{1, 4}
+>>> (s1-s2) | (s2-s1)
+{1, 4}
+>>>
+>>> [{1,2}, {2,1}]
+[{1, 2}, {1, 2}]
+>>> { [1,2] , [2,1] }
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'
+>>> {1,2,3,1,2}
+{1, 2, 3}
+>>> hash(1)
+1
+>>> hash(1)
+1
+>>> hash( (1,2) )
+3713081631934410656
+>>> hash( (1,2) )
+3713081631934410656
+>>> hash( "OKOK")
+-1674674090747129463
+>>> hash( (2,1) )
+3713082714465905806
+>>> {(1,2), (2,1), (1,2)}
+{(1, 2), (2, 1)}
+>>> hash([1,2])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'
+>>> { [1,2] , [2,1] }
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'
+>>> { (1,2) , (2,1) }
+{(1, 2), (2, 1)}
+>>> s = "OK"
+>>> s = 'OK'
+>>> s = r"OK"
+>>> s2 = u"OK"
+>>> s3 = b"OK"
+>>> type(s),type(s2),type(s3)
+(<class 'str'>, <class 'str'>, <class 'bytes'>)
+>>> s
+'OK'
+>>> s.encode("utf-8")
+b'OK'
+>>> s.encode("utf-8").decode("utf-8")
+'OK'
+>>> len("\n")
+1
+>>> len(r"\n")
+2
+>>> dir(str)
+['__add__', '__class__', '__contains__', '__delattr__', '__d
+ir__', '__doc__', '__eq__', '__format__', '__ge__', '__getat
+tribute__', '__getitem__', '__getnewargs__', '__gt__', '__ha
+sh__', '__init__', '__iter__', '__le__', '__len__', '__lt__'
+, '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '
+__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setat
+tr__', '__sizeof__', '__str__', '__subclasshook__', 'capital
+ize', 'casefold', 'center', 'count', 'encode', 'endswith', '
+expandtabs', 'find', 'format', 'format_map', 'index', 'isaln
+um', 'isalpha', 'isdecimal', 'isdigit', 'isidentifier', 'isl
+ower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'is
+upper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'pa
+rtition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition
+', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith',
+'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+
+>>> dir(bytes)
+['__add__', '__class__', '__contains__', '__delattr__', '__d
+ir__', '__doc__', '__eq__', '__format__', '__ge__', '__getat
+tribute__', '__getitem__', '__getnewargs__', '__gt__', '__ha
+sh__', '__init__', '__iter__', '__le__', '__len__', '__lt__'
+, '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '
+__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setat
+tr__', '__sizeof__', '__str__', '__subclasshook__', 'capital
+ize', 'center', 'count', 'decode', 'endswith', 'expandtabs',
+ 'find', 'fromhex', 'hex', 'index', 'isalnum', 'isalpha', 'i
+sdigit', 'islower', 'isspace', 'istitle', 'isupper', 'join',
+ 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'repl
+ace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'r
+strip', 'split', 'splitlines', 'startswith', 'strip', 'swapc
+ase', 'title', 'translate', 'upper', 'zfill']
+>>> set(dir(str)) - set(dir(bytes))
+{'format', 'encode', 'isprintable', 'isidentifier', 'isdecim
+al', 'format_map', 'casefold', 'isnumeric'}
+>>> set(dir(bytes)) - set(dir(str))
+{'decode', 'fromhex', 'hex'}
+>>> []
+[]
+>>> ()
+()
+>>> type({})
+<class 'dict'>
+>>> type (set())
+<class 'set'>
+>>> set()
+set()
+>>> tuple()
+()
+>>> list()
+[]
+>>> d = { "ok" : 2, "nok":3}
+>>> d
+{'ok': 2, 'nok': 3}
+>>> {1,2,3}
+{1, 2, 3}
+>>> d = { "ok" : 2, "nok":3}
+>>> len(d)
+2
+>>> "ok" in d
+True
+>>> d["ok"]
+2
+>>> for k in d:
+...     print(k, d[k])
+...
+ok 2
+nok 3
+>>> d["new"] = 30
+>>> d
+{'ok': 2, 'nok': 3, 'new': 30}
+>>> d["new"] = 50
+>>> d
+{'ok': 2, 'nok': 3, 'new': 50}
+>>> del d["new"]
+>>> d
+{'ok': 2, 'nok': 3}
+>>> d
+{'ok': 2, 'nok': 3}
+>>> d[2] = 45
+>>> d
+{'ok': 2, 'nok': 3, 2: 45}
+>>> d[2.5] = 45
+>>> d
+{'ok': 2, 'nok': 3, 2: 45, 2.5: 45}
+>>> d
+{'ok': 2, 'nok': 3, 2: 45, 2.5: 45}
+>>> d.keys()
+dict_keys(['ok', 'nok', 2, 2.5])
+>>> d.values()
+dict_values([2, 3, 45, 45])
+>>> d.items()
+dict_items([('ok', 2), ('nok', 3), (2, 45), (2.5, 45)])
+>>>
+>>> for k,v in d.items():
+...     print(k,v)
+...
+ok 2
+nok 3
+2 45
+2.5 45
+>>>
+few more linesfew

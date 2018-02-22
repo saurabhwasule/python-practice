@@ -1,0 +1,72 @@
+#TB_window {
+	font: 12px/normal "Lucida Grande", Verdana, Arial, sans-serif; color: rgb(51, 51, 51); font-size-adjust: none; font-stretch: normal;
+}
+#TB_secondLine {
+	font: 10px/normal "Lucida Grande", Verdana, Arial, sans-serif; color: rgb(102, 102, 102); font-size-adjust: none; font-stretch: normal;
+}
+#TB_window a:link {
+	color: rgb(102, 102, 102);
+}
+#TB_window a:visited {
+	color: rgb(102, 102, 102);
+}
+#TB_window a:hover {
+	color: rgb(0, 0, 0);
+}
+#TB_window a:active {
+	color: rgb(102, 102, 102);
+}
+#TB_window a:focus {
+	color: rgb(102, 102, 102);
+}
+#TB_overlay {
+	left: 0px; top: 0px; width: 100%; height: 100%; position: fixed; z-index: 100;
+}
+.TB_overlayMacFFBGHack {
+	background: url("macffbghack.png");
+}
+.TB_overlayBG {
+	opacity: 0.75; background-color: rgb(0, 0, 0); -moz-opacity: 0.75;
+}
+#TB_window {
+	background: rgb(255, 255, 255); left: 50%; top: 50%; text-align: left; color: rgb(0, 0, 0); display: none; position: fixed; z-index: 102;
+}
+#TB_window img#TB_Image {
+	margin: 15px 0px 0px 15px; border: 1px solid rgb(204, 204, 204); border-image: none; display: block;
+}
+#TB_caption {
+	padding: 7px 30px 10px 25px; height: 25px; float: left;
+}
+#TB_closeWindow {
+	padding: 11px 25px 10px 0px; height: 25px; float: right;
+}
+#TB_closeAjaxWindow {
+	padding: 7px 10px 5px 0px; text-align: right; margin-bottom: 1px; float: right;
+}
+#TB_ajaxWindowTitle {
+	padding: 7px 0px 5px 10px; margin-bottom: 1px; float: left;
+}
+#TB_title {
+	height: 27px; background-color: rgb(232, 232, 232);
+}
+#TB_ajaxContent {
+	padding: 2px 15px 15px; text-align: left; line-height: 1.4em; overflow: auto; clear: both;
+}
+.TB_modal#TB_ajaxContent {
+	padding: 15px;
+}
+#TB_ajaxContent p {
+	padding: 5px 0px;
+}
+#TB_load {
+	background: url("loading_animation.gif"); margin: -6px 0px 0px -104px; left: 50%; top: 50%; width: 208px; height: 13px; display: none; position: fixed; z-index: 103;
+}
+#TB_HideSelect {
+	border: currentColor; border-image: none; left: 0px; top: 0px; width: 100%; height: 100%; position: fixed; z-index: 99; opacity: 0; background-color: rgb(255, 255, 255); -moz-opacity: 0;
+}
+#TB_iframeContent {
+	border: currentColor; border-image: none; clear: both; margin-top: 1px; margin-bottom: -1px;
+}
+.thickbox-hide-image {
+	display: none;
+}

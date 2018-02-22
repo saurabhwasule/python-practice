@@ -1,0 +1,15 @@
+span.ext {
+	background: url("extlink.png") no-repeat right; padding-right: 12px;
+}
+span.mailto {
+	background: url("mailto.png") no-repeat right; padding-right: 12px;
+}
+@media print
+{
+span.ext {
+	padding: 0px; display: none;
+}
+span.mailto {
+	padding: 0px; display: none;
+}
+}

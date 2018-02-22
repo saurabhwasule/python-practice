@@ -1,0 +1,51 @@
+#permissions td.module {
+	font-weight: bold;
+}
+#permissions td.permission {
+	padding-left: 1.5em;
+}
+#access-rules .access-type {
+	margin-right: 1em; float: left;
+}
+#access-rules .rule-type {
+	margin-right: 1em; float: left;
+}
+#access-rules .access-type .form-item {
+	margin-top: 0px;
+}
+#access-rules .rule-type .form-item {
+	margin-top: 0px;
+}
+#access-rules .mask {
+	clear: both;
+}
+#user-login-form {
+	text-align: center;
+}
+#user-admin-filter ul {
+	margin: 0px; padding: 0px; width: 100%; list-style-type: none;
+}
+#user-admin-buttons {
+	clear: right; margin-left: 0.5em; float: left;
+}
+#user-admin-settings fieldset .description {
+	padding-bottom: 0.5em; font-size: 0.85em;
+}
+.profile {
+	margin: 1em 0px; clear: both;
+}
+.profile .picture {
+	margin: 0px 1em 1em 0px; float: right;
+}
+.profile h3 {
+	border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.profile dl {
+	margin: 0px 0px 1.5em;
+}
+.profile dt {
+	margin: 0px 0px 0.2em; font-weight: bold;
+}
+.profile dd {
+	margin: 0px 0px 1em;
+}

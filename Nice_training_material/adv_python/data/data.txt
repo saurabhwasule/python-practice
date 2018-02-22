@@ -1,0 +1,9 @@
+cruiseid  year  station  month  day  date        lat        lon         depth_w  taxon                        count  
+        AA8704    1987  1        04     13   13-APR-87   35.85      -75.48      18       Centropages_typicus          75343  
+        AA8704    1987  1        04     13   13-APR-87   35.85      -75.48      18       Gastropoda                   0  
+        AA8704    1987  1        04     13   13-APR-87   35.85      -75.48      18       Calanus_finmarchicus         2340   
+        AA8704    1987  1        07     13   13-JUL-87   35.85      -75.48      18       Acartia_spp.                 5616   
+        AA8704    1987  1        07     13   13-JUL-87   35.85      -75.48      18       Metridia_lucens              468    
+        AA8704    1987  1        08     13   13-AUG-87   35.85      -75.48      18       Evadne_spp.                  0      
+        AA8704    1987  1        08     13   13-AUG-87   35.85      -75.48      18       Salpa                        0      
+        AA8704    1987  1        08     13   13-AUG-87   35.85      -75.48      18       Oithona_spp.                 468    

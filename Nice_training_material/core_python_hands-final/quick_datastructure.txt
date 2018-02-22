@@ -1,0 +1,84 @@
+str - Immutable 
+--------------------------------------------------------------
+Create empty string                 s="" or s=''
+Create string                       s="Hello" or 'Hello'
+Find length of string               len(s)
+Does a substring exist              "Hel" in s 
+Compare two string                  s == "Hello"
+Take each alphabet from string      for e in s:
+                                        #do some work with e
+Concatenate two strings             s + "hello 
+(returns new String)                                     
+Access an alphabet                  s[index] where index=0 to len(s)-1
+
+
+
+
+
+List - Mutable
+--------------------------------------------------------------
+Create empty list                 lst=[]
+Create list                       lst=[ 1,2,3]
+Find length of list               len(lst)
+Does an element exist             2 in lst 
+Compare two list                  lst == [1,2]
+Take each element from list       for e in lst:
+                                    #do some work with e
+Concatenate two lists             lst + [2,3]
+(returns new list)    
+Append an element to list         lst.append(element)                                 
+Access an element                 lst[index] where index=0 to len(lst)-1
+update an element                 lst[index] = new_value 
+
+
+
+
+
+
+tuple - immutable
+--------------------------------------------------------------
+Create empty tuple                 tup=()
+Create tuple                       tup=( 1,2,3)
+Find length of tuple               len(tup)
+Does an element exist              2 in tup 
+Compare two tuple                  tup == (1,2)
+Take each element from tuple       for e in tup:
+                                        #do some work with e
+Concatenate two tuples             tup + (2,3)
+(returns new tuple)                                  
+Access an element                 tup[index] where index=0 to len(tup)-1
+
+
+
+
+
+set - Mutable, no duplicates allowed, no insertion ordered
+--------------------------------------------------------------
+Create empty set                 st= set()
+Create set                       st= { 1,2,3}
+Find length of set               len(st)
+Does an element exist            2 in st 
+Compare two set                  st == {1,2}
+Take each element from set       for e in st:
+                                    #do some work with e                      
+Add an element                   st.add(element)
+
+     
+
+
+
+     
+Dict - key,value pair, Mutable 
+--------------------------------------------------------------
+Create empty dict                 dt= {}
+Create dict                       dt= { 1:2, 'ok':3, 'k': 'no'}
+How many keys are there           len(dt)
+Does an key exist                 'ok' in dt 
+Compare two dict                  dt == {1:2}
+Iterate  dict                     for k in dt:
+                                    #do some work with k 
+                                    #and it's value dt[k]  
+Create a new Key                  dt[3] = 40 #first time assignment 
+Access value given key            dt[key] where key is from dt.keys() list
+Update value of old key           dt[1] = 20 # key must be existing 
+Get keys, values and k,v pair     dt.keys(), dt.values(), dt.items()                                    

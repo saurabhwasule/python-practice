@@ -1,0 +1,33 @@
+.shadetabs {
+	font: bold 12px/normal Arial, Helvetica, sans-serif; padding: 3px 0px; text-align: left; margin-top: 1px; margin-bottom: 0px; margin-left: 0px; list-style-type: none; font-size-adjust: none; font-stretch: normal;
+}
+.shadetabs li {
+	margin: 0px; display: inline;
+}
+.shadetabs li a {
+	background: url("shade.gif") repeat-x left top white; padding: 3px 7px; border: 1px solid rgb(119, 119, 136); border-image: none; color: rgb(45, 43, 43); text-decoration: none; margin-right: 3px; position: relative; z-index: 1;
+}
+.shadetabs li a:visited {
+	color: rgb(45, 43, 43);
+}
+.shadetabs li a:hover {
+	color: rgb(45, 43, 43); text-decoration: underline;
+}
+.shadetabs li a.selected {
+	top: 1px; position: relative;
+}
+.shadetabs li a.selected {
+	border-bottom-color: rgb(255, 255, 255); background-image: url("shadeactive.gif");
+}
+.shadetabs li a.selected:hover {
+	text-decoration: none;
+}
+.tabcontent {
+	display: none;
+}
+@media print
+{
+.tabcontent {
+	display: block !important;
+}
+}

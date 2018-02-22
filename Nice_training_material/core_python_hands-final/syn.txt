@@ -1,0 +1,265 @@
+for         - Iterator looping - str, list, set, dict(keys)
+in, not in  - checking existence, str, list, set, dict(key)
+==          - content checking str, list, set, dict
+
+[start:end:step] 		    - slice, str, list
+L[ : ]  					-> creates a copy
+L[ ::-1 ] 					-> reverses
+L[ len(L): ] = Iterator  	-> appends I
+L[ :0 ] = Iterator			-> prepends I
+L[ i:i ] = Iter 			-> inserts I at i
+
+list mutable - assignment to slice is possible
+str immutable 
+tuple immutable
+set mutable
+dict mutable
+
+
++  	List-returns a new copy, str- concatenation, number -add
++=  List- inplace append, for immutable, expands to s = s + I
+		
+				empty
+[]   list		[]
+()   tuple		tuple()
+{}   set		set()
+{:}  dict		{}
+
+conversion methods
+to List   		list()
+to Set 	  		set()
+to dict   		dict()  from [ (k,v), (k,v) ....]
+to tuple  		tuple()
+to bytes  		bytes()
+
+
+
+List - Insertion ordered, can have duplicates
+append(element), + List returns new list ,  += list
+reverse
+Error if indexed beyond size 
+
+dict - Key set like, value can be anything
+Creation of key - first time assignment
+Error - accessing no existence key
+
+Set - no order, no duplicate, can have only immutable
+add(element)
+pop()/remove(member)
+| & - ^
+
+
+string -> encode -> bytes
+bytes -> decode -> string
+
+
+
+
+
+
+
+
+
+
+
+
+
+#
+
+List comprehension - [ ... for  .. in .. if ...]
+Set comprehension - { ... for  .. in .. if ...}
+dict - { key:value for  .. in .. if ...}
+#normal function
+
+def f(x,y):
+	return x+y
+	
+#closure form
+def f(x):
+	def g(y):
+		return x+y
+	return g
+	
+f(2)(3)
+
+#Anon function
+g = lambda ... : ...
+
+
+#
+map(func_of_one_arg, iterable) -> 
+create a new list based on application of F on each element
+
+filter(func_of_one_arg_returning_true_or_false, iterable) - 
+Filter out False return of F on element
+
+reduce(func_two_arg, Iterable, initializer) -> reduce to first arg of Func
+
+sorted(Iterable, key=function_of_one_arg_returning_key_for_sorting, reverse=True_for_descending)
+
+zip(iter1, iter2,...) -> gives [ (first_element_from_1, first_element_from__2), ..]
+enumerate(iter) -> gives [ (index, element), ....]
+
+#Recursive function
+def fun(...):
+	Stopping criteria
+	fun(...)
+
+#Files operatons 
+>>> f = open("var.txt")
+>>> for e in f:
+...     print(e)
+	
+>>> f = open("var.txt")
+>>> f.readlines()
+>>> f.close()
+#for py2.7 and py3.x
+with open("var.txt") as f:
+    f.readlines()
+
+
+##Exception 
+raise Exception("str")
+
+try:
+    #do work 
+except Exception,e: #Py 2 except Exception as e: #Py3
+    print e
+finally:
+    print "OK"
+
+
+
+##Iterator 
+iter(iterable)/next(iterator)/for e in iterator:
+yield obj 
+( expr for x in lst if guard for y in ......N_TIMES)
+
+##Decorator 
+def deco_name(f):
+    def inner(*args, **kargs):
+        #do
+        res = f(*args, **kargs)
+        #do
+        return res 
+    return inner 
+
+def deco_name(args):
+    def _func(f):
+        def inner(*args, **kargs):
+            #do
+            res = f(*args, **kargs)
+            #do
+            return res 
+        return inner
+    return _func
+
+#Regex
+\n \t   escape pattern
+.       An char
+\w      Alphanumeric 
+\W      inverse of \w
+\d      digit
+\D      inverse of digit 
+\s      white space 
+\S      inverse of white space 
++       >=1
+*       >=0
+?       0, 1
+{m,n}   max n , min m 
+{m}     only m
+{,n}
+{m,}
+\1      Back reference 
+$1      Group reference **not available
+^       Begining
+$       End
+-------------------------------
+Create empty list          
+Split s with "|" 
+For each element of above 
+    call findall with rs 
+    above result[0].capitalize
+    Sub rs with above 
+    append above to empty list 
+                
+join the list with |           
+            
+            
+            
+            
+            
+            
+###MultiWoking 
+#from package threading 
+Thread(target,args)     start/join          starts target , no stopping
+                        current_thread()    Returns current Thread , has name, daemon
+                        local()             threadlocal, sets by .var_name
+#Sync
+Thread          join()                      calling thread blocks                
+Lock            acquire/release/with        under with, gets lock
+RLock           acquire/release/with        under with, gets lock, reentrant
+Condition       with/wait/notify/notifyAll  consumer wait, producer notify, both under with
+Event           is_set/set/wait             one set, other/s checks or wait
+Semaphore(n)    acquire/release/with        under with till a number , then blocks
+Timer(t,fn)     start                       starts fn after t
+
+#From package Queue 
+Queue           put/get/task_done/join      puts pickable objects and gets       
+#sharing variable
+                global                      Any global variable 
+ 
+#parallelwork 
+#from concurrent.futures
+ThreadPoolExecutor(max_workers=2) returns executor
+executor.map(fn, lst)      Blocks till all work done parallely, returns iterator
+executor.submit(fn, val)   Returns future 
+                           Future has result, add_done_callback(fn), done() methods
+as_completed(fs)           Retruns iterator of completed future 
+wait(fs)                   returns done,not_done futures 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+#from package multiprocessing 
+#(must be in a file under if __name__ == '__main__':)
+Process(target,args)     start/join/terminate  starts target 
+                         current_process()     Returns current Process 
+                                               has name, daemon, pid
+#Sync
+Process          join()                      calling thread blocks                
+Lock            acquire/release/with        under with, gets lock
+RLock           acquire/release/with        under with, gets lock, reentrant
+Condition       with/wait/notify/notifyAll  consumer wait, producer notify, both under with
+Event           is_set/set/wait             one set, other/s checks or wait
+Semaphore(n)    acquire/release/with        under with till a number , then blocks
+
+#sending/recvinng 
+Queue           put/get/task_done/join      puts pickable objects and gets       
+Pipe            send/recv/close             child.send what parent.recv, 
+                                            Pipe returns parent, child and Process args is child
+#sharing variable 
+Value(type, var)         Value return var can be shared 
+Array(type, arr)         Array returns var can be shared 
+Manager()                Retuns server process, supports all sync primitives that can be shared
+                         Supports Value, Array
+                         Supports list and dict that can be shared 
+                         
+#parallelwork
+Pool(n)         map(fn,lst)/join/terminate
+                apply_async(fn, args, [callback]) returns result object
+                res.get(timeout=n)  gets the result
+                res.ready()/res.successful()
+
+#from concurrent.futures
+ProcessPoolExecutor(max_workers=2) returns executor
+executor.map(fn, lst)      Blocks till all work done parallely, returns iterator
+executor.submit(fn, val)   Returns future 
+                           Future has result, add_done_callback(fn), done() methods
+as_completed(fs)           Retruns iterator of completed future 
+wait(fs)                   returns done,not_done futures
+
+

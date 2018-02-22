@@ -1,0 +1,411 @@
+body {
+	font: 13px/1.5em times new roman, serif; margin: 0px; font-size-adjust: none; font-stretch: normal;
+}
+#content-area {
+	font-size: 15px;
+}
+a:link {
+	color: rgb(0, 77, 150); text-decoration: none;
+}
+a:visited {
+	color: rgb(0, 77, 150); text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	text-decoration: underline;
+}
+h1 {
+	line-height: 1.3em;
+}
+h2 {
+	line-height: 1.3em;
+}
+h3 {
+	line-height: 1.3em;
+}
+h4 {
+	line-height: 1.3em;
+}
+h5 {
+	line-height: 1.3em;
+}
+h6 {
+	line-height: 1.3em;
+}
+h1 {
+	margin: 0px; padding: 0px 0px 0.5em; font-size: 2.2em; font-weight: 500;
+}
+h2 {
+	margin: 0px; line-height: 1.8em; font-size: 1.8em; font-weight: 300;
+}
+#sidebar-first h2 {
+	font-size: 1.5em;
+}
+h3 {
+	margin: 0px; line-height: 1.8em; font-size: 1.4em; font-weight: 300;
+}
+h4 {
+	font-size: 1.2em; margin-bottom: 0.8em;
+}
+h5 {
+	font-size: 1.1em; font-weight: 600; margin-bottom: 0px;
+}
+h6 {
+	font-size: 1em; font-weight: bold;
+}
+p {
+	margin: 0px 0px 1em;
+}
+ul {
+	padding-left: 2em; margin-bottom: 1em; margin-left: 0px;
+}
+ol {
+	padding-left: 2em; margin-bottom: 1em; margin-left: 0px;
+}
+ul ul {
+	margin-bottom: 0px;
+}
+ol ol {
+	margin-bottom: 0px;
+}
+table {
+	margin: 1em 0px 2em; border: 1px solid rgb(102, 102, 102); border-image: none; width: 99%;
+}
+table.center {
+	margin: 1em auto 2em;
+}
+tr.even td {
+	padding: 10px 5px;
+}
+tr.odd td {
+	padding: 10px 5px;
+}
+tr.odd {
+	background-color: white;
+}
+thead th {
+	color: rgb(73, 73, 73); font-weight: bold; border-bottom-color: rgb(102, 102, 102); border-bottom-width: 2px; border-bottom-style: solid;
+}
+td {
+	padding: 0.3em 0.5em; border: 1px solid rgb(102, 102, 102); border-image: none;
+}
+th {
+	padding: 0.3em 0.5em; border: 1px solid rgb(102, 102, 102); border-image: none;
+}
+th {
+	color: inherit; background-color: rgb(238, 238, 238);
+}
+.views-table td {
+	border: currentColor !important; border-image: none !important;
+}
+.views-table th {
+	border: currentColor !important; border-image: none !important;
+}
+.views-table tr {
+	border: currentColor !important; border-image: none !important;
+}
+.views-table thead {
+	border: currentColor !important; border-image: none !important;
+}
+.views-table tbody {
+	border: currentColor !important; border-image: none !important;
+}
+.views-table {
+	border: currentColor !important; border-image: none !important;
+}
+pre {
+	font: 1em/1.5 "andale mono", "lucida console", monospace; font-size-adjust: none; font-stretch: normal;
+}
+code {
+	font: 1em/1.5 "andale mono", "lucida console", monospace; font-size-adjust: none; font-stretch: normal;
+}
+tt {
+	font: 1em/1.5 "andale mono", "lucida console", monospace; font-size-adjust: none; font-stretch: normal;
+}
+pre {
+	margin: 5px 0px; padding: 5px; border: 1px solid rgb(170, 170, 170); border-image: none; display: block; background-color: rgb(239, 239, 239);
+}
+ul {
+	list-style-type: square;
+}
+ul ul {
+	list-style-type: circle;
+}
+ul ul ul {
+	list-style-type: disc;
+}
+ol {
+	list-style-type: decimal;
+}
+ol ol {
+	list-style-type: upper-alpha;
+}
+ol ol ol {
+	list-style-type: lower-roman;
+}
+abbr {
+	border-bottom-color: rgb(102, 102, 102); border-bottom-width: 1px; border-bottom-style: dotted; white-space: nowrap; cursor: help;
+}
+#edit-title {
+	width: 98%; font-size: 24px;
+}
+#system-themes-form img {
+	width: 100px;
+}
+.form-item .description {
+	color: rgb(119, 119, 119); line-height: 1.2em; font-size: 0.8em; font-style: italic; margin-top: 5px;
+}
+#edit-delete {
+	color: rgb(204, 0, 0);
+}
+div.messages {
+	background: rgb(187, 221, 255); margin: 1em 0px; padding: 9px; border: 1px solid rgb(170, 204, 238); border-image: none; color: rgb(0, 51, 102);
+}
+div.warning {
+	background: rgb(255, 238, 102); border-color: rgb(238, 221, 85); color: rgb(136, 68, 0);
+}
+div.error {
+	background: rgb(238, 102, 51); border-color: rgb(221, 85, 34); color: white;
+}
+div.status {
+	background: rgb(204, 255, 136); border-color: rgb(187, 238, 119); color: rgb(51, 102, 0);
+}
+#header {
+	background: rgb(255, 255, 255); color: rgb(0, 0, 0);
+}
+#footer {
+	background: rgb(255, 255, 255); color: rgb(0, 0, 0);
+}
+#sidebar-first {
+	background: rgb(255, 255, 255); color: rgb(0, 0, 0);
+}
+#sidebar-second {
+	background: rgb(255, 208, 117);
+}
+#navigation {
+	background: rgb(254, 255, 165);
+}
+#site-name {
+	padding-bottom: 0.3em; font-weight: bold;
+}
+#site-slogan {
+	line-height: 1em; font-size: 2em; font-weight: normal;
+}
+#logo-title a img {
+	vertical-align: middle;
+}
+h1.title {
+	text-shadow: 1.5px 1.5px 2px #ccc;
+}
+#footer {
+	border-top-color: rgb(238, 238, 238); border-top-width: 1px; border-top-style: solid;
+}
+div.highlight {
+	padding: 1.5em; border: 1px solid rgb(204, 204, 204); border-image: none; margin-right: 5em; margin-left: 5em;
+}
+#page #header {
+	background: rgb(0, 77, 150); margin-bottom: 20px;
+}
+#page #main {
+	margin-top: 0px !important;
+}
+#page #logo-title {
+	padding: 15px; border: 1px solid rgb(153, 153, 153); border-image: none; color: rgb(255, 255, 255); display: table; position: relative; min-width: 400px; max-width: 600px; border-bottom-right-radius: 15px; border-bottom-left-radius: 15px; background-color: rgb(0, 77, 150);
+}
+#page #logo-logo a {
+	background: rgb(0, 77, 150); width: 200px; height: 68px; text-indent: -9999px; display: block;
+}
+#logo-title div {
+	vertical-align: middle; display: table-cell;
+}
+#site-name {
+	margin: 12px 0px; padding: 9px 8px 0px 20px; height: 44px; line-height: 44px; vertical-align: middle; border-right-color: rgb(204, 204, 204); border-right-width: 2px; border-right-style: solid; white-space: nowrap;
+}
+#site-name a {
+	color: rgb(255, 255, 255); text-transform: uppercase; font-family: arial,helvetica,sans-serif; font-size: 2.5em; font-weight: normal;
+}
+#site-slogan {
+	padding: 8px; height: 52px; line-height: 1em; font-family: arial,helvetica,sans-serif; font-size: 1.4em; font-weight: normal; display: table; white-space: normal;
+}
+#sidebar-first h3 {
+	text-align: center; line-height: 2em; font-family: arial,helvetica,sans-serif; font-weight: normal; border-top-left-radius: 8px; border-top-right-radius: 8px;
+}
+#page ul.menu li h2 {
+	color: rgb(255, 255, 255); background-color: rgb(0, 77, 150);
+}
+div.content > ul.menu {
+	padding-left: 0px;
+}
+div.content > ul.menu a {
+	color: rgb(51, 51, 51);
+}
+div.content > ul.menu a.active {
+	font-weight: bold;
+}
+div.content > ul.menu {
+	padding: 0px; margin-bottom: 20px; margin-left: 0px;
+}
+div.content > ul.menu {
+	padding: 15px 20px; border-right-color: rgb(221, 221, 221); border-bottom-color: rgb(221, 221, 221); border-left-color: rgb(221, 221, 221); border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; background-color: rgb(243, 243, 245);
+}
+#page #header {
+	background: url("../images/headers/none.jpg") repeat-x 0px -35px rgb(255, 255, 255);
+}
+#page #logo-title {
+	border: 1px solid rgb(100, 119, 49); border-image: none; color: rgb(255, 255, 255); background-color: rgb(18, 50, 111);
+}
+#page #logo-logo a {
+	background: url("../images/logos/none.png") no-repeat left top rgb(18, 50, 111);
+}
+#page ul.menu li h2 {
+	color: rgb(255, 255, 255); background-color: rgb(18, 50, 111);
+}
+.bio#page #header {
+	background: url("../images/headers/biol.jpg") repeat-x 0px -35px rgb(255, 255, 255);
+}
+.bio#page #logo-title {
+	border: 1px solid rgb(100, 119, 49); border-image: none; color: rgb(255, 255, 255); background-color: rgb(125, 149, 61);
+}
+.bio#page #logo-logo a {
+	background: url("../images/logos/biol.png") no-repeat left top rgb(125, 149, 61);
+}
+.bio#page ul.menu li h2 {
+	color: rgb(255, 255, 255); background-color: rgb(125, 149, 61);
+}
+.astro#page #header {
+	background: url("../images/headers/astro.jpg") repeat-x 0px -35px rgb(255, 255, 255);
+}
+.astro#page #logo-title {
+	border: 1px solid rgb(31, 57, 108); border-image: none; color: rgb(255, 255, 255); background-color: rgb(18, 50, 111);
+}
+.astro#page #logo-logo a {
+	background: url("../images/logos/astro.png") no-repeat left top rgb(18, 50, 111);
+}
+.astro#page ul.menu li h2 {
+	color: rgb(255, 255, 255); background-color: rgb(18, 50, 111);
+}
+.bmb#page #header {
+	background: url("../images/headers/bmb.jpg") repeat-x 0px -35px rgb(255, 255, 255);
+}
+.bmb#page #logo-title {
+	border: 1px solid rgb(61, 99, 161); border-image: none; background-color: rgb(13, 43, 97);
+}
+.bmb#page #logo-logo a {
+	background: url("../images/logos/bmb.png") no-repeat left top rgb(13, 43, 97);
+}
+.bmb#page ul.menu li h2 {
+	color: rgb(255, 255, 255); background-color: rgb(13, 43, 97);
+}
+.chem#page #header {
+	background: url("../images/headers/chem.jpg") repeat-x 0px -35px rgb(255, 255, 255);
+}
+.chem#page #logo-title {
+	border: 1px solid rgb(61, 99, 161); border-image: none; background-color: rgb(18, 123, 191);
+}
+.chem#page #logo-logo a {
+	background: url("../images/logos/chem.png") no-repeat left top rgb(18, 123, 191);
+}
+.chem#page ul.menu li h2 {
+	color: rgb(255, 255, 255); background-color: rgb(18, 123, 191);
+}
+.frnsc#page #header {
+	background: url("../images/headers/frnsc.jpg") repeat-x 0px -35px rgb(255, 255, 255);
+}
+.frnsc#page #logo-title {
+	border: 1px solid rgb(11, 41, 17); border-image: none; background-color: rgb(33, 101, 64);
+}
+.frnsc#page #logo-logo a {
+	background: url("../images/logos/frnsc.png") no-repeat left top rgb(33, 101, 64);
+}
+.frnsc#page ul.menu li h2 {
+	color: rgb(255, 255, 255); background-color: rgb(33, 101, 64);
+}
+.math#page #header {
+	background: url("../images/headers/math.jpg") repeat-x 0px -35px rgb(255, 255, 255);
+}
+.math#page #logo-title {
+	border: 1px solid rgb(11, 41, 17); border-image: none; background-color: rgb(75, 79, 80);
+}
+.math#page #logo-logo a {
+	background: url("../images/logos/math.png") no-repeat left top rgb(75, 79, 80);
+}
+.math#page ul.menu li h2 {
+	color: rgb(255, 255, 255); background-color: rgb(75, 79, 80);
+}
+.phys#page #header {
+	background: url("../images/headers/phys.jpg") repeat-x 0px -35px rgb(255, 255, 255);
+}
+.phys#page #logo-title {
+	border: 1px solid rgb(153, 153, 153); border-image: none; background-color: rgb(124, 126, 123);
+}
+.phys#page #logo-logo a {
+	background: url("../images/logos/phys.png") no-repeat left top rgb(124, 126, 123);
+}
+.phys#page ul.menu li h2 {
+	color: rgb(255, 255, 255); background-color: rgb(124, 126, 123);
+}
+.stat#page #header {
+	background: url("../images/headers/stat.jpg") repeat-x 0px -35px rgb(255, 255, 255);
+}
+.stat#page #logo-title {
+	border: 1px solid rgb(55, 93, 164); border-image: none; background-color: rgb(65, 105, 177);
+}
+.stat#page #logo-logo a {
+	background: url("../images/psu_ecos1.png") no-repeat left top rgb(65, 105, 177);
+}
+.stat#page #sidebar-first h3 {
+	color: rgb(255, 255, 255); background-color: rgb(65, 105, 177);
+}
+@media all and (max-width:600px)
+{
+#page #logo-title {
+	margin: 0px; padding: 10px; display: block; min-width: 0px;
+}
+#header #logo-title div {
+	float: none; display: block;
+}
+#logo-title div {
+	text-align: center !important;
+}
+#logo-logo a {
+	margin: 0px auto;
+}
+#site-name a {
+	margin: 0px auto;
+}
+#site-slogan span {
+	margin: 0px auto;
+}
+#logo-title #site-name {
+	margin: 0px; border: currentColor; border-image: none; text-align: center;
+}
+#logo-title #site-slogan {
+	margin: 0px; border: currentColor; border-image: none; text-align: center;
+}
+#site-name a {
+	line-height: 2em; font-size: 2em !important;
+}
+#site-slogan {
+	height: auto; line-height: 1.5em; font-size: 1.5em !important;
+}
+}
+span {
+	color: inherit; background-color: inherit;
+}
+sub {
+	color: inherit; background-color: inherit;
+}
+sup {
+	color: inherit; background-color: inherit;
+}
+ul.primary li a {
+	color: rgb(0, 77, 150);
+}
+#regions_elms_navigation_top a {
+	font-size: 1em !important;
+}
+.content img {
+	height: auto !important; max-width: 100% !important;
+}

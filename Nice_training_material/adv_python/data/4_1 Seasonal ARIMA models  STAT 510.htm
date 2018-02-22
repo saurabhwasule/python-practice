@@ -1,0 +1,600 @@
+﻿<!DOCTYPE HTML>
+<!-- saved from url=(0053)https://onlinecourses.science.psu.edu/stat510/node/67 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><HTML 
+lang="en" lang="en" dir="ltr" xml:lang="en" 
+xmlns="http://www.w3.org/1999/xhtml"><HEAD><META content="IE=11.0000" 
+http-equiv="X-UA-Compatible">
+ 
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">     
+<META name="viewport" content="width=device-width, initial-scale=1">     
+<META http-equiv="X-UA-Compatible" content="IE=Edge">     <TITLE>4.1  Seasonal 
+ARIMA models | STAT 510</TITLE>      <LINK href="/stat510/node/50" rel="prev"> 
+<LINK href="/stat510/node/50" rel="up"> <LINK href="/stat510/node/86" 
+rel="next"> <LINK href="/stat510/sites/onlinecourses.science.psu.edu.stat510/files/online_ed2_favicon.ico" 
+rel="shortcut icon" type="image/x-icon">     <LINK href="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/book.css" 
+rel="stylesheet" type="text/css" media="all"> <LINK href="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/node.css" 
+rel="stylesheet" type="text/css" media="all"> <LINK href="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/defaults.css" 
+rel="stylesheet" type="text/css" media="all"> <LINK href="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/system.css" 
+rel="stylesheet" type="text/css" media="all"> <LINK href="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/system-menus.css" 
+rel="stylesheet" type="text/css" media="all"> <LINK href="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/user.css" 
+rel="stylesheet" type="text/css" media="all"> <LINK href="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/content-module.css" 
+rel="stylesheet" type="text/css" media="all"> <LINK href="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/hovertip.css" 
+rel="stylesheet" type="text/css" media="all"> <LINK href="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/thickbox.css" 
+rel="stylesheet" type="text/css" media="all"> <LINK href="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/thickbox_ie.css" 
+rel="stylesheet" type="text/css" media="all"> <LINK href="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/extlink.css" 
+rel="stylesheet" type="text/css" media="all"> <LINK href="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/fieldgroup.css" 
+rel="stylesheet" type="text/css" media="all"> <LINK href="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/printlinks.css" 
+rel="stylesheet" type="text/css" media="all"> <LINK href="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/comment.css" 
+rel="stylesheet" type="text/css" media="all"> <LINK href="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/default.css" 
+rel="stylesheet" type="text/css" media="all"> <LINK href="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/layout.css" 
+rel="stylesheet" type="text/css" media="all"> <LINK href="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/style.css" 
+rel="stylesheet" type="text/css" media="all"> <LINK href="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/print.css" 
+rel="stylesheet" type="text/css" media="print"> <LINK href="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/tabs.css" 
+rel="stylesheet" type="text/css" media="screen">     <!--[if lte IE 6]><link type="text/css" rel="stylesheet" media="all" href="/stat510/sites/all/themes/online_ed2/css/ie6.css" /><![endif]--> 
+    <!--[if IE 7]><link type="text/css" rel="stylesheet" media="all" href="/stat510/sites/all/themes/online_ed2/css/ie7.css" /><![endif]--> 
+    <!--[if IE 8]><link type="text/css" rel="stylesheet" media="all" href="/stat510/sites/all/themes/online_ed2/css/ie8.css" /><![endif]--> 
+    <LINK href="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/tabcontent.css" 
+rel="stylesheet" type="text/css">     
+<SCRIPT src="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/jquery.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT src="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/drupal.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT src="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/hovertip.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT src="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/mathjax.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT src="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/thickbox.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT src="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/extlink.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT src="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/jquery.a_form.packed.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT src="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/ajax.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT src="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/ajax_wysiwyg.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/stat510/", "mathjax": { "path": "/stat510/sites/all/libraries/mathjax/MathJax.js" }, "thickbox": { "close": "Close", "next": "Next \x3e", "prev": "\x3c Prev", "esc_key": "or Esc Key", "next_close": "Next / Close on last", "image_count": "Image !current of !total" }, "extlink": { "extTarget": "_blank", "extClass": "ext", "extSubdomains": 1, "extExclude": "", "extInclude": "(statprogram)", "extAlert": 0, "extAlertText": "This link will take you to an external web site. We are not responsible for their content.", "mailtoClass": "mailto" } });
+//--><!]]>
+</SCRIPT>
+ 
+<SCRIPT type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+    // initialize tooltips in a separate thread
+    $(document).ready(function() {
+      window.setTimeout(hovertipInit, 1);
+    });
+
+//--><!]]>
+</SCRIPT>
+     
+<SCRIPT type="text/javascript">
+      $(document).ready(function(){
+
+        $('iframe').each(function(){
+          var url = $(this).attr("src");
+          var char = "?";
+          if(url.indexOf("?") != -1){
+            var char = "&";
+          }
+        $(this).attr("src",url+char+"wmode=transparent");
+        });
+    });
+    </SCRIPT>
+ <LINK href="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/video-js.css" 
+rel="stylesheet"> 
+<SCRIPT src="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/video.js"></SCRIPT>
+   
+<META name="GENERATOR" content="MSHTML 11.00.9600.18895"></HEAD>   
+<BODY class="not-front not-logged-in page-node node-type-book one-sidebar sidebar-left page-node-67 section-node">
+<DIV id="skip"><A href="https://onlinecourses.science.psu.edu/stat510/node/67#content">Skip 
+to Content</A>           </DIV>
+<DIV class="stat" id="page"><!-- ______________________ HEADER _______________________ --> 
+<DIV id="header">
+<DIV id="logo-title">
+<DIV id="logo-logo"><A title="Eberly College of Science" id="logo" href="http://science.psu.edu/" 
+rel="home">Eberly College of Science</A></DIV>
+<DIV id="site-name"><A title="Home" href="https://onlinecourses.science.psu.edu/stat510/" 
+rel="home"><SPAN>STAT 510</SPAN></A>   </DIV>
+<DIV id="site-slogan"><SPAN>Applied Time Series Analysis </SPAN></DIV></DIV><!-- /logo-title --> 
+                </DIV><!-- /header -->     <!-- ______________________ MAIN _______________________ --> 
+    
+<DIV class="clearfix" id="main">
+<DIV id="content">
+<DIV class="inner column center" id="content-inner">
+<DIV id="content-header">
+<DIV class="breadcrumb"><A 
+href="https://onlinecourses.science.psu.edu/stat510/">Home</A> » <A href="https://onlinecourses.science.psu.edu/stat510/node/50">Lesson 
+4: Seasonal Models</A></DIV>
+<H1 class="title">4.1  Seasonal ARIMA models</H1></DIV><!-- /#content-header --> 
+                    
+<DIV id="content-area">
+<DIV class="node node clearfix node-type-book" id="node-67">
+<DIV class="node-inner">
+<DIV class="content"><SPAN class="print-link"><SPAN class="print_html"><A title="Display a printer-friendly version of this page." 
+class="print-page" onclick="window.open(this.href); return false" href="https://onlinecourses.science.psu.edu/stat510/print/book/export/html/67" 
+rel="nofollow"><IMG width="16" height="16" title="Printer-friendly version" 
+class="print-icon print-icon-margin" alt="Printer-friendly version" src="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/print_icon.gif">Printer-friendly 
+version</A></SPAN></SPAN>
+<P>Seasonality in a time series is a regular pattern of changes that repeats 
+over S time periods, where S defines the number of time periods until the 
+pattern repeats again.</P>
+<P>For example, there is seasonality in monthly data for which high values tend 
+always to occur in some particular months and low values tend always to occur in 
+other particular months. In this case, S = 12 (months per year) is the span of 
+the periodic seasonal behavior. For quarterly data, S = 4 time periods per 
+year.</P>
+<P>In a seasonal ARIMA model, seasonal AR and MA terms predict <EM>x<SUB>t</SUB> 
+</EM>using data values and errors at times with lags that are multiples of 
+<EM>S</EM> (the span of the seasonality).</P>
+<UL>
+  <LI>With monthly data (and <EM>S</EM> = 12), a seasonal first order 
+  autoregressive model would use <EM>x<SUB>t-12 </SUB></EM>to predict 
+  <EM>x<SUB>t</SUB></EM>.&nbsp; For instance, if we were selling cooling fans we 
+  might predict this August’s sales using last August’s sales.&nbsp; (This 
+  relationship of predicting using last year’s data would hold for any month of 
+  the year.)</LI>
+  <LI>A seasonal second order autoregressive model would use 
+  <EM>x<SUB>t-12</SUB></EM> and <EM>x<SUB>t-24</SUB></EM> to predict 
+  <EM>x<SUB>t</SUB></EM>.&nbsp; Here we would predict this August’s values from 
+  the past two Augusts.</LI>
+  <LI>A seasonal first order MA(1) model (with <EM>S</EM> = 12) would use 
+  <EM>w<SUB>t-12</SUB></EM> as a predictor.&nbsp; A seasonal second order MA(2) 
+  model would use <EM>w<SUB>t-12</SUB></EM> and 
+<EM>w<SUB>t-24</SUB>.</EM></LI></UL>
+<P><STRONG>Differencing</STRONG></P>
+<P>Almost by definition, it may be necessary to examine differenced data when we 
+have seasonality.&nbsp; Seasonality usually causes the series to be 
+nonstationary because the average values at some particular times within the 
+seasonal span (months, for example) may be different than the average values at 
+other times.&nbsp; For instance, our sales of cooling fans will always be higher 
+in the summer months.</P>
+<P><STRONG>Seasonal differencing</STRONG> is defined as a difference between a 
+value and a value with lag that is a multiple of <EM>S</EM>.</P>
+<UL>
+  <LI>With <EM>S</EM> = 12, which may occur with monthly data, a seasonal 
+  difference is&nbsp;(1-<EM>B</EM><SUP>12</SUP>)<EM>x<SUB>t</SUB> </EM>=<EM> 
+  x<SUB>t</SUB> - x<SUB>t-12</SUB></EM>.</LI></UL>
+<P>The differences (from the previous year) may be about the same for each month 
+of the year giving us a stationary series.</P>
+<UL>
+  <LI>With <EM>S</EM> = 4, which may occur with quarterly data, a seasonal 
+  difference is (1-<EM>B</EM><SUP>4</SUP>)<EM>x<SUB>t</SUB> </EM>=<EM> 
+  x<SUB>t</SUB> - x<SUB>t-4</SUB>.</EM></LI></UL>
+<P>Seasonal differencing removes seasonal trend and can also get rid of a 
+seasonal random walk type of nonstationarity.</P>
+<P><STRONG>Non-seasonal differencing</STRONG>:&nbsp; If trend is present in the 
+data, we may also need non-seasonal differencing.&nbsp; Often (not always) a 
+first difference (non-seasonal) will “detrend” the data.&nbsp; That is, we 
+use&nbsp; (1-<EM>B</EM>)<EM>x<SUB>t</SUB> </EM>=<EM> x<SUB>t</SUB> - 
+x<SUB>t-1</SUB></EM> in the presence of trend.</P>
+<P><STRONG>Differencing for Trend and Seasonality</STRONG>: When both trend and 
+seasonality are present, we may need to apply both a non-seasonal first 
+difference and a seasonal difference.</P>
+<P>That is, we may need to examine the ACF and PACF 
+of&nbsp;&nbsp;(1-<EM>B</EM><SUP>12</SUP>)(1-<EM>B</EM>)<EM>x<SUB>t</SUB> 
+</EM>=<EM></EM>(<EM>x<SUB>t</SUB> -</EM><EM>x<SUB>t-1</SUB></EM>)<EM> - 
+</EM>(<EM>x<SUB>t-12</SUB></EM>-<EM>x<SUB>t-13</SUB></EM>).</P>
+<P>Removing trend doesn't mean that we have removed the dependency.&nbsp; We may 
+have removed the mean, μ<SUB><EM>t</EM></SUB>, part of which may include a 
+periodic component.&nbsp; In some ways we are breaking the dependency down into 
+recent things that have happened and long-range things that have happened.</P>
+<P><STRONG>Non-seasonal Behavior Will Still Matter</STRONG></P>
+<P>With seasonal data, it is likely that short run non-seasonal components will 
+still contribute to the model.&nbsp; In the monthly sales of cooling fans 
+mentioned above, for instance, sales in the previous month or two, along with 
+the sales from the same month a year ago, may help predict this month’s 
+sales.</P>
+<P>We’ll have to look at the ACF and PACF behavior over the first few lags (less 
+than <EM>S</EM>) to assess what non-seasonal terms might work in the model.</P>
+<P><STRONG>Seasonal ARIMA Model</STRONG></P>
+<P>The seasonal ARIMA model incorporates both non-seasonal and seasonal factors 
+in a multiplicative model.&nbsp; One shorthand notation for the model is</P>
+<P>ARIMA(<EM>p, d, q</EM>) × (<EM>P, D, Q</EM>)<EM>S</EM>,</P>
+<P>with <EM>p</EM> = non-seasonal AR order, <EM>d</EM> = non-seasonal 
+differencing, <EM>q</EM> = non-seasonal MA order, <EM>P</EM> = seasonal AR 
+order, <EM>D</EM> = seasonal differencing, <EM>Q</EM> = seasonal MA order, and 
+<EM>S</EM> = time span of repeating seasonal pattern.</P>
+<P>Without differencing operations, the model could be written more formally 
+as</P>
+<P style="padding-left: 30px;">(1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Φ(<EM>B<SUP>S</SUP></EM>)φ(<EM>B</EM>)(<EM>x<SUB>t</SUB></EM> - μ) = 
+Θ(<EM>B<SUP>S</SUP></EM>)θ(<EM>B</EM>)<EM>w<SUB>t</SUB></EM></P>
+<P>The non-seasonal components are:</P>
+<P style="padding-left: 30px;">AR:&nbsp; φ(<EM>B</EM>) = 1 - φ<EM><SUB>1</SUB>B 
+-</EM><EM> ... - </EM>φ<EM><SUB>p</SUB>B<SUP>p</SUP></EM></P>
+<P style="padding-left: 30px;">MA:&nbsp; θ(<EM>B</EM>) = 1 + θ<EM><SUB>1</SUB>B 
++</EM><EM> ... + </EM>θ<EM><SUB>q</SUB>B<SUP>q</SUP></EM></P>
+<P>The seasonal components are:</P>
+<P style="padding-left: 30px;">Seasonal AR:&nbsp; Φ(<EM>B<SUP>S</SUP></EM>) = 1 
+- Φ<EM><SUB>1</SUB>B<SUP>S</SUP> -</EM><EM> ... - 
+</EM>Φ<EM><SUB>P</SUB>B<SUP>PS</SUP></EM></P>
+<P style="padding-left: 30px;">Seasonal MA:&nbsp; Θ(<EM>B<SUP>S</SUP></EM>) = 1 
++ Θ<EM><SUB>1</SUB>B<SUP>S</SUP> +</EM><EM> ... + 
+</EM>Θ<EM><SUB>Q</SUB>B<SUP>QS</SUP></EM></P>
+<P>Note that on the left side of equation (1) the seasonal and non-seasonal AR 
+components multiply each other, and on the right side of equation (1) the 
+seasonal and non-seasonal MA components multiply each other.</P>
+<P><STRONG>Example 1</STRONG>: ARIMA (0, 0, 1) × (0, 0, 1)<SUB>12</SUB></P>
+<P>The model includes a non-seasonal MA(1) term, a seasonal MA(1) term, no 
+differencing, no AR terms and the seasonal period is <EM>S</EM> = 12.</P>
+<P style="padding-left: 30px;">The non-seasonal MA(1) polynomial is 
+θ(<EM>B</EM>) = 1 + θ<EM><SUB>1</SUB>B</EM> .</P>
+<P style="padding-left: 30px;">The seasonal MA(1) polynomial is 
+Θ(<EM>B<SUP>12</SUP></EM>) = 1 + Θ<EM><SUB>1</SUB>B<SUP>12</SUP></EM>.</P>
+<P style="padding-left: 30px;">The model is (<EM>x<SUB>t</SUB></EM> - μ) = 
+Θ<SUB>1</SUB>(<EM>B<SUP>12</SUP></EM>) 
+θ<SUB>1</SUB>(<EM>B</EM>)<EM>w<SUB>t</SUB></EM> = (1 + 
+Θ<SUB>1</SUB><EM>B<SUP>12</SUP></EM>)(1 + 
+θ<SUB>1</SUB><EM>B</EM>)<EM>w<SUB>t</SUB>.</EM></P>
+<P>When we multiply the two polynomials on the right side, we get</P>
+<P>(<EM>x<SUB>t</SUB></EM> - μ) = (1 + θ<SUB>1</SUB><EM>B</EM> + 
+Θ<SUB>1</SUB><EM>B<SUP>12</SUP></EM> + 
+θ<SUB>1</SUB>Θ<SUB>1</SUB><EM>B<SUP>13</SUP></EM>)<EM>w<SUB>t</SUB></EM></P>
+<P><EM>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </EM>= 
+<EM>w<SUB>t</SUB></EM> + θ<SUB>1</SUB><EM>w<SUB>t-1</SUB></EM> + 
+Θ<SUB>1</SUB><EM>w<SUB>t-12</SUB></EM> + 
+θ<SUB>1</SUB>Θ<SUB>1</SUB><EM>w<SUB>t-13</SUB>.</EM></P>
+<P>Thus the model has MA terms at lags 1, 12, and 13.&nbsp; This leads many to 
+think that the identifying ACF for the model will have non-zero autocorrelations 
+only at lags 1, 12, and 13.&nbsp; There’s a slight surprise here.&nbsp; There 
+will also be a non-zero autocorrelation at lag 11.&nbsp; We supply a proof in 
+Appendix 1 for this document.</P>
+<P><STRONG>Example 1 Continued</STRONG>:</P>
+<P>We simulated <EM>n</EM> = 1000 values from an ARIMA (0, 0, 1) × (0, 0, 
+1)<SUB>12</SUB>.&nbsp; The non-seasonal MA (1) coefficient was 
+θ<SUB>1</SUB>=.7.&nbsp; The seasonal MA(1) coefficient was 
+Θ<SUB>1</SUB>=.6.&nbsp; The sample ACF for the simulated series was as 
+follows:</P>
+<P style="text-align: center;"><IMG width="300" height="262" alt="Ex 1" src="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/4.1.ex1_.png"></P>
+<P>Note the spikes at lags 1, 11, and 12 in the ACF.&nbsp; This is 
+characteristic of the ACF for the ARIMA (0, 0, 1) × (0, 0, 
+1)<SUB>12</SUB>.&nbsp; Because this model has nonseasonal and seasonal MA terms, 
+the PACF tapers nonseasonally, following lag 1, and tapers seasonally, that is 
+near S=12, and again near lag 2*S=24.</P>
+<P><STRONG>Example 2 ARIMA (1, 0, 0) × (1, 0, 0)<SUB>12</SUB></STRONG></P>
+<P>The model includes a non-seasonal AR(1) term, a seasonal AR(1) term, no 
+differencing, no MA terms and the seasonal period is <EM>S</EM> = 12.</P>
+<P style="padding-left: 30px;">The non-seasonal AR(1) polynomial is 
+φ(<EM>B</EM>) = 1 - φ<SUB>1</SUB><EM>B</EM>.</P>
+<P style="padding-left: 30px;">The seasonal AR(1) polynomial is 
+Φ(<EM>B</EM><SUP>12</SUP>) = 1 - Φ<SUB>1</SUB><EM>B</EM><SUP>12</SUP>.</P>
+<P style="padding-left: 30px;">The model is (1 - 
+Φ<SUB>1</SUB><EM>B</EM><SUP>12</SUP>)(1 - 
+φ<SUB>1</SUB><EM>B</EM>)(<EM>x<SUB>t</SUB></EM> - μ) = 
+<EM>w<SUB>t</SUB></EM>.</P>
+<P>If we let <EM>z<SUB>t</SUB> </EM>=<EM> x<SUB>t</SUB></EM> - μ (for 
+simplicity), multiply the two AR components and push all but 
+<EM>z<SUB>t</SUB></EM> to the right side we get <EM>z<SUB>t</SUB> </EM>= 
+φ<SUB>1</SUB><EM>z<SUB>t-1</SUB></EM> + Φ<SUB>1</SUB><EM>z<SUB>t-12</SUB></EM> + 
+(-Φ<SUB>1</SUB>φ<SUB>1</SUB>)<EM>z<SUB>t-13</SUB> + w<SUB>t</SUB>.</EM><EM> 
+</EM></P>
+<P>This is an AR model with predictors at lags 1, 12, and 13.</P>
+<P>R can be used to determine and plot the PACF for this model, with 
+φ<SUB>1</SUB>=.6 and Φ<SUB>1</SUB>=.5. That PACF (partial autocorrelation 
+function) is:</P>
+<P style="text-align: center;"><IMG alt="graph" src="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/graph_35.gif"></P>
+<P>It’s not quite what you might expect for an AR, but it almost is.&nbsp; There 
+are distinct spikes at lags 1, 12, and 13 with a bit of action coming before lag 
+12.&nbsp; Then, it cuts off after lag 13.</P>
+<P>Note: R commands were</P>
+<P style="padding-left: 30px;"><SPAN 
+style="font-family: courier new,courier;"><SPAN 
+style="font-size: small;">thepacf=ARMAacf (ar = 
+c(.6,0,0,0,0,0,0,0,0,0,0,.5,-.30),lag.max=30,pacf=T)<BR>plot 
+(thepacf,type="h")</SPAN></SPAN></P>
+<P><STRONG>Identifying a Seasonal Model</STRONG></P>
+<P><EM>Step 1</EM>:&nbsp; Do a time series plot of the data.&nbsp; Examine it 
+for features such as trend and seasonality.&nbsp; You’ll know that you’ve 
+gathered seasonal data (months, quarters, etc,) so look at the pattern across 
+those time units (months, etc.) to see if there is indeed a seasonal 
+pattern.</P>
+<P><EM>Step 2</EM>:&nbsp; Do any necessary differencing. The general guidelines 
+are:</P>
+<UL>
+  <LI>If there is seasonality and no trend, then take a difference of lag 
+  <EM>S</EM>. For instance, take a 12<SUP>th</SUP> difference for monthly data 
+  with seasonality.&nbsp; Seasonality will appear in the ACF by tapering slowly 
+  at multiples of S.</LI>
+  <LI>If there is linear trend and no obvious seasonality, then take a first 
+  difference.&nbsp; If there is a curved trend, consider a transformation of the 
+  data before differencing.</LI>
+  <LI>If there is both trend and seasonality, apply a seasonal difference to the 
+  data and then re-evaluate the trend.&nbsp; If a trend remains, then take first 
+  differences.&nbsp; For instance, if the series is called <EM>x</EM>, the 
+  commands in R would be:</LI></UL>
+<P style="padding-left: 60px;"><SPAN 
+style="font-family: courier new,courier;"><SPAN 
+style="font-size: small;">diff12=diff(x, 
+12)<BR>plot(diff12)<BR>acf2(diff12)<BR></SPAN></SPAN><SPAN style="font-family: courier new,courier;"><SPAN 
+style="font-size: small;">diff1and12 = diff(diff12, 1)</SPAN></SPAN></P>
+<UL>
+  <LI>If there is neither obvious trend nor seasonality, don’t take any 
+  differences.</LI></UL>
+<P><EM>Step 3</EM>:&nbsp; Examine the ACF and PACF of the differenced data (if 
+differencing is necessary).</P>
+<P>We’re using this information to determine possible models.&nbsp; This can be 
+tricky going involving some (educated) guessing.&nbsp; Some basic guidance:</P>
+<P style="padding-left: 30px;"><EM>Non-seasonal terms</EM>:&nbsp; Examine the 
+early lags (1, 2, 3, …) to judge non-seasonal terms.&nbsp; Spikes in the ACF (at 
+low lags) indicate non-seasonal MA terms.&nbsp; Spikes in the PACF (at low lags) 
+indicated possible non-seasonal AR terms.</P>
+<P style="padding-left: 30px;"><EM>Seasonal terms</EM>:&nbsp; Examine the 
+patterns across lags that are multiples of <EM>S</EM>. For example, for monthly 
+data, look at lags 12, 24, 36, and so on (probably won’t need to look at much 
+more than the first two or three seasonal multiples).&nbsp; Judge the ACF and 
+PACF at the seasonal lags in the same way you do for the earlier lags.</P>
+<P><EM>Step 4</EM>:&nbsp; Estimate the model(s) that might be reasonable on the 
+basis of Step 3.&nbsp; Don’t forget to include any differencing that you did 
+before looking at the ACF and PACF.&nbsp; In the software, specify the original 
+series as the data and then indicate the desired differencing when specifying 
+parameters in the <SPAN style="font-size: small;"><SPAN style="font-family: terminal,monaco;">arima</SPAN></SPAN> 
+command that you’re using.</P>
+<P><EM>Step 5</EM>:&nbsp; Examine the residuals (with ACF, Box-Pierce, and any 
+other means) to see if the model seems good.&nbsp; Compare AIC or BIC values if 
+you tried several models.</P>
+<P>If things don’t look good here, it’s back to Step 3 (or maybe even Step 
+2).</P>
+<P><STRONG>Example 3</STRONG></P>
+<P>The data series are a monthly series of a measure of the flow of the Colorado 
+River, at a particular site, for n = 600 consecutive months.</P>
+<P><EM>Step 1</EM>: A time series plot is</P>
+<P style="text-align: center;"><IMG width="402" height="269" alt="graph" src="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/graph_36.gif"></P>
+<P>With so many data points, it’s difficult to judge whether there is 
+seasonality.&nbsp; If it was your job to work on data like this, you probably 
+would know that river flow is seasonal – perhaps likely to be higher in the late 
+spring and early summer, due to snow runoff.</P>
+<P>Without this knowledge, we might determine means by month of the year.&nbsp; 
+Below is a plot of means for the 12 months of the year.&nbsp; It’s clear that 
+there are monthly differences (seasonality).</P>
+<P style="text-align: center;"><IMG width="369" height="247" alt="graph" src="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/graph_37.gif"></P>
+<P>Looking back at the time series plot, it’s hard to judge whether there’s any 
+long run trend.&nbsp; If there is, it’s slight.</P>
+<P><EM>Steps 2 and 3</EM>:&nbsp; We might try the idea that there is 
+seasonality, but no trend.&nbsp; To do this, we can create a variable that gives 
+the 12<SUP>th</SUP> differences (seasonal differences), calculated as 
+<EM>x<SUB>t</SUB></EM>-<EM>x<SUB>t-12</SUB></EM>.&nbsp; Then, we look at the ACF 
+and the PACF for the 12<SUP>th</SUP> difference series (not the original data). 
+Here they are:</P>
+<P style="text-align: center;"><IMG width="520" height="348" alt="graph" src="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/graph_38.gif"></P>
+<P><EM>Non-seasonal behavior</EM>:&nbsp; The PACF shows a clear spike at lag 1 
+and not much else until about lag 11.&nbsp; This is accompanied by a tapering 
+pattern in the early lags of the ACF.&nbsp; A non-seasonal AR(1) may be a useful 
+part of the model.</P>
+<P><EM>Seasonal behavior</EM>:&nbsp; We look at what’s going on around lags 12, 
+24, and so on.&nbsp; In the ACF, there’s a cluster of (negative) spikes around 
+lag 12 and then not much else.&nbsp;&nbsp; The PACF tapers in multiples of S; 
+that is the PACF has significant lags at 12, 24, 36 and so on.&nbsp; This is 
+similar to what we saw for a seasonal MA(1) component in Example 1 of this 
+lesson.</P>
+<P>Remembering that we’re looking at 12<SUP>th</SUP> differences, the model we 
+might try for the original series is ARIMA (1,0,0)×(0,1,1)<SUB>12</SUB>.</P>
+<P><EM>Step 4</EM>:&nbsp; Minitab results for the ARIMA (1,0,0)× 
+(0,1,1)<SUB>12</SUB>:</P>
+<P><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">Final 
+Estimates of Parameters</SPAN></SPAN></P>
+<TABLE border="0">
+  <TBODY>
+  <TR>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">Type</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">Coef</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">SE 
+      Coef</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">T</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">P</SPAN></SPAN></TD></TR>
+  <TR>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">AR 
+      1</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">0.5162</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">0.0354</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">14.58</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">0.000</SPAN></SPAN></TD></TR>
+  <TR>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">SMA 
+      </SPAN><SPAN style="font-family: courier new,courier;">12</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">0.9140</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">0.0169</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">53.95</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">0.000</SPAN></SPAN></TD></TR>
+  <TR>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">Constant</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">-0.006502</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">0.002884</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">-2.25</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">0.025</SPAN></SPAN></TD></TR></TBODY></TABLE>
+<P><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">Differencing: 
+0 regular, 1 seasonal of order 12</SPAN><BR><SPAN style="font-family: courier new,courier;">Number 
+of observations: Original series 600, after differencing 588</SPAN><BR><SPAN 
+style="font-family: courier new,courier;">Residuals: SS = 272.886 (backforecasts 
+excluded)</SPAN><BR><SPAN style="font-family: courier new,courier;">MS = 0.466 
+DF = 585</SPAN></SPAN></P>
+<P><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">Modified 
+Box-Pierce (Ljung-Box) Chi-Square statistic</SPAN></SPAN></P>
+<TABLE border="0">
+  <TBODY>
+  <TR>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">Lag</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">12</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">24</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">36</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">48</SPAN></SPAN></TD></TR>
+  <TR>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">Chi-Square</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">5.6</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">10.0</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">16.3</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">24.0</SPAN></SPAN></TD></TR>
+  <TR>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">DF</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">9</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">21</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">33</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">45</SPAN></SPAN></TD></TR>
+  <TR>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">P-Value</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">0.781</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">0.979</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">0.994</SPAN></SPAN></TD>
+    <TD><SPAN style="font-size: small;"><SPAN style="font-family: courier new,courier;">0.996</SPAN></SPAN></TD></TR></TBODY></TABLE>
+<P>Things look good.&nbsp; The Box-Pierce statistics are all non-significant and 
+the estimated coefficients (previous page) are statistically significant.</P>
+<P><EM>Step 5 (diagnostics)</EM>:&nbsp; We’ve already looked at the Box-Pierce 
+tests.&nbsp; The ACF of the residuals looks good too:</P>
+<P style="text-align: center;"><IMG width="388" height="259" alt="graph" src="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/graph_39.gif"></P>
+<P>What doesn’t look perfect is a plot of residuals versus fits.&nbsp; There’s 
+non-constant variance.</P>
+<P style="text-align: center;"><IMG width="375" height="252" alt="graph" src="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/graph_40.gif"></P>
+<P>We’ve got three choices for what to do about the non-constant variance: (1) 
+ignore it, (2) go back to step 1 and try a variance stabilizing transformation 
+like log or square root, or (3) use an ARCH model that includes a component for 
+changing variances.&nbsp; We’ll get to ARCH models later in the course.</P>
+<P>Lesson 4.2 for this week will give R guidance and an additional example or 
+two.</P>
+<P>&nbsp;</P>
+<HR>
+
+<P><STRONG>Appendix (Optional reading):</STRONG></P>
+<P>Only those interested in theory things need to look at the following.</P>
+<P>In Example 1, we promised a proof that <SPAN 
+style="font-size: large;">$\rho_{11}$ </SPAN>≠ 0 for ARIMA (0, 0, 1) × (0, 0, 
+1)<SUB>12</SUB>.</P>
+<P>A correlation is defined as Covariance/ product of standard deviations.</P>
+<P>The covariance between <EM>x<SUB>t</SUB></EM> and <EM>x<SUB>t-11</SUB></EM> = 
+E(<EM>x<SUB>t</SUB></EM> -&nbsp;μ<EM>&nbsp;</EM>)(<EM>x<SUB>t-11</SUB></EM> 
+-&nbsp;μ).</P>
+<P>For the model in Example 1,</P>
+<P><EM>x<SUB>t</SUB></EM> - μ = <EM>w<SUB>t</SUB></EM> + 
+θ<SUB>1</SUB><EM>w<SUB>t-1</SUB></EM> + Θ<SUB>1</SUB><EM>w<SUB>t-12</SUB></EM> + 
+θ<SUB>1</SUB>Θ<SUB>1</SUB><EM>w<SUB>t-13</SUB></EM></P>
+<P><EM>x<SUB>t-11</SUB></EM> - μ = <EM>w<SUB>t-11</SUB></EM> + 
+θ<SUB>1</SUB><EM>w<SUB>t-12</SUB></EM> + Θ<SUB>1</SUB><EM>w<SUB>t-23</SUB></EM> 
++ θ<SUB>1</SUB>Θ<SUB>1</SUB><EM>w<SUB>t-24</SUB></EM></P>
+<P>The covariance between<EM> x<SUB>t</SUB></EM> and 
+<EM>x<SUB>t-11</SUB></EM></P>
+<P>(2) E(<EM>w<SUB>t</SUB></EM> + θ<SUB>1</SUB><EM>w<SUB>t-1</SUB></EM> + 
+Θ<SUB>1</SUB><EM>w<SUB>t-12</SUB></EM> + 
+θ<SUB>1</SUB>Θ<SUB>1</SUB><EM>w<SUB>t-13</SUB></EM>)(<EM>w<SUB>t-11</SUB></EM> + 
+θ<SUB>1</SUB><EM>w<SUB>t-12</SUB></EM> + Θ<SUB>1</SUB><EM>w<SUB>t-23</SUB></EM> 
++ θ<SUB>1</SUB>Θ<SUB>1</SUB><EM>w<SUB>t-24</SUB></EM>)</P>
+<P>The <EM>w</EM>’s are independent errors.&nbsp; The expected value of any 
+product involving <EM>w</EM>’s with different subscripts will be 0.&nbsp; A 
+covariance between <EM>w</EM>’s with the same subscripts will be the variance of 
+<EM>w</EM>.</P>
+<P>If you inspect all possible products in expression 2, there will be one 
+product with matching subscripts.&nbsp; They have lag <EM>t – 12</EM>.&nbsp; 
+Thus this expected value (covariance) will be different from 0.</P>
+<P>This shows that the lag 11 autocorrelation will be different from 0.&nbsp; If 
+you look at the more general problem, you can find that only lags 1, 11, 12, and 
+13 have non-zero autocorrelations for the ARIMA (0, 0, 1) × (0, 0, 
+1)<SUB>12</SUB>.</P>
+<P>A seasonal ARIMA model incorporates both non-seasonal and seasonal factors in 
+a multiplicative fashion.</P>
+<DIV class="book-navigation" id="book-navigation-50">
+<DIV class="page-links clear-block"><A title="Go to previous page" class="page-previous" 
+href="https://onlinecourses.science.psu.edu/stat510/node/50">‹ Lesson 4: 
+Seasonal Models</A><A title="Go to parent page" class="page-up" href="https://onlinecourses.science.psu.edu/stat510/node/50">up</A><A 
+title="Go to next page" class="page-next" href="https://onlinecourses.science.psu.edu/stat510/node/86">4.2 
+Identifying Seasonal Models and R Code ›</A></DIV></DIV></DIV>
+<DIV class="links">
+<UL class="links inline">
+  <LI class="book_printer first"><A title="Display a printer-friendly version of this page." 
+  class="print-page" onclick="window.open(this.href); return false" href="https://onlinecourses.science.psu.edu/stat510/print/book/export/html/67" 
+  rel="nofollow"><IMG width="16" height="16" title="Printer-friendly version" 
+  class="print-icon print-icon-margin" alt="Printer-friendly version" src="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/print_icon.gif">Printer-friendly 
+  version</A></LI> 
+  <LI class="comment_forbidden last"></LI> </UL></DIV></DIV><!-- /node-inner --> 
+</DIV><!-- /node-->          </DIV><!-- /#content-area -->                       
+        </DIV></DIV><!-- /content-inner /content -->                           
+<DIV class="column sidebar first" id="sidebar-first">
+<DIV class="inner" id="sidebar-first-inner">
+<H1 id="menu_title">Navigation</H1>
+<DIV class="block block-user block-left block-id-42 clearfix first odd" id="block-user-1">
+<DIV class="block-inner">
+<H3 class="title block-title">Start Here!</H3>
+<DIV class="content">
+<UL class="menu">
+  <LI class="expanded first welcome_to_stat_510-"><A title="Welcome to STAT 510!" 
+  href="https://onlinecourses.science.psu.edu/stat510/node/33">Welcome to STAT 
+  510!</A>
+  <UL class="menu">
+    <LI class="leaf first learning_online_-_orientation"><A title="" href="https://onlinecourses.science.psu.edu/statprogram/learning_online">Learning 
+    Online - Orientation</A></LI>
+    <LI class="leaf introduction_to_r_"><A title="" href="https://onlinecourses.science.psu.edu/statprogram/r">Introduction 
+    to R </A></LI>
+    <LI class="leaf last where_to_go_for_help-"><A title="" href="http://stat.psu.edu/Education/help">Where 
+    to go for Help!</A></LI></UL></LI>
+  <LI class="leaf search_course_content"><A title="" href="https://onlinecourses.science.psu.edu/stat510/search">Search 
+  Course Content</A></LI>
+  <LI class="collapsed last faculty_login_-psu_access_account-"><A title="" 
+  href="https://onlinecourses.science.psu.edu/stat510/login">Faculty login (PSU 
+  Access Account)</A></LI></UL></DIV></DIV><!-- /block-inner --> </DIV><!-- /block -->
+<DIV class="block block-menu block-left block-id-43 clearfix last even" id="block-menu-menu-lessons"> 
+  
+<DIV class="block-inner">
+<H3 class="title block-title">Lessons</H3>
+<DIV class="content">
+<UL class="menu">
+  <LI class="collapsed first lesson_1-__time_series_basics"><A title="" href="https://onlinecourses.science.psu.edu/stat510/node/41">Lesson 
+  1:  Time Series Basics</A></LI>
+  <LI class="collapsed lesson_2-_ma_models-_pacf"><A title="Lesson 2: MA Models, Partial Autocorrelation, Notational Conventions" 
+  href="https://onlinecourses.science.psu.edu/stat510/node/46">Lesson 2: MA 
+  Models, PACF</A></LI>
+  <LI class="collapsed lesson_3-_arima_models"><A title="Lesson 3: Identifying and Estimating ARIMA models; Using ARIMA models to forecast future values" 
+  href="https://onlinecourses.science.psu.edu/stat510/node/49">Lesson 3: ARIMA 
+  models</A></LI>
+  <LI class="expanded active-trail lesson_4-_seasonal_models"><A title="Lesson 4: Seasonal Models" 
+  href="https://onlinecourses.science.psu.edu/stat510/node/50">Lesson 4: 
+  Seasonal Models</A>
+  <UL class="menu">
+    <LI class="leaf first active-trail id4-1__seasonal_arima"><A title="4.1  Seasonal ARIMA models" 
+    class="active" 
+    href="https://onlinecourses.science.psu.edu/stat510/node/67">4.1  Seasonal 
+    ARIMA</A></LI>
+    <LI class="leaf last id4-2_identifying_seasonal_models_and_r_code"><A title="4.2 NEW! Identifying Seasonal Models and R Code" 
+    href="https://onlinecourses.science.psu.edu/stat510/node/86">4.2 Identifying 
+    Seasonal Models and R Code</A></LI></UL></LI>
+  <LI class="collapsed lesson_5-_smoothing_and_decomposition_methods"><A title="Lesson 5: Smoothing and Decomposition Methods and More Practice with ARIMA models" 
+  href="https://onlinecourses.science.psu.edu/stat510/node/51">Lesson 5: 
+  Smoothing and Decomposition Methods</A></LI>
+  <LI class="collapsed lesson_6-_the_periodogram"><A title="Lesson 6: The Periodogram" 
+  href="https://onlinecourses.science.psu.edu/stat510/node/52">Lesson 6: The 
+  Periodogram</A></LI>
+  <LI class="collapsed lesson_8-_regression_with_arima_errors-_ccf-_2_time_series"><A 
+  title="Lesson 8: Regression with ARIMA errors, Cross correlation functions, Relationships between 2 Time Series" 
+  href="https://onlinecourses.science.psu.edu/stat510/node/53">Lesson 8: 
+  Regression with ARIMA errors; CCF; 2 Time Series</A></LI>
+  <LI class="collapsed lesson_9-_prewhitening-_intervention_analysis"><A title="Lesson 9: Intervention Analysis" 
+  href="https://onlinecourses.science.psu.edu/stat510/node/54">Lesson 9: 
+  Prewhitening; Intervention Analysis</A></LI>
+  <LI class="collapsed lesson_10-__longitudinal_analysis-_repeated_measures"><A 
+  title="Lesson 11: Longitudinal Analysis / Repeated Measures" href="https://onlinecourses.science.psu.edu/stat510/node/56">Lesson 
+  10:  Longitudinal Analysis/ Repeated Measures</A></LI>
+  <LI class="collapsed lesson_11-_var-p-_models_and_arch_models"><A title="Lesson 10: Vector Autoregressive Models and Pre-whitening" 
+  href="https://onlinecourses.science.psu.edu/stat510/node/55">Lesson 11: VAR(p) 
+  Models and ARCH Models</A></LI>
+  <LI class="collapsed lesson_12-_spectral_analysis"><A title="Lesson 12: ARCH models; Intro to Spectral Analysis" 
+  href="https://onlinecourses.science.psu.edu/stat510/node/57">Lesson 12: 
+  Spectral Analysis</A></LI>
+  <LI class="collapsed lesson_13-_fractional_differencing-threshold_models"><A 
+  title="Lesson 13: Spectral Analysis" href="https://onlinecourses.science.psu.edu/stat510/node/58">Lesson 
+  13: Fractional Differencing/Threshold Models</A></LI>
+  <LI class="collapsed last lesson_14-_review"><A title="Lesson 14: name of lesson here..." 
+  href="https://onlinecourses.science.psu.edu/stat510/node/59">Lesson 14: 
+  Review</A></LI></UL></DIV></DIV><!-- /block-inner --> </DIV><!-- /block -->      
+        
+<DIV id="sciencemark"><A title="Penn State Science" href="http://science.psu.edu/"><IMG 
+alt="Penn State Science" src="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/pennstatescience250.png"> 
+                </A>               </DIV>
+<DIV id="readytoenroll"><A title="Course Catalog" href="http://www.worldcampus.psu.edu/course-catalog/search-courses"><IMG 
+alt="Ready to Enroll?" src="4_1%20Seasonal%20ARIMA%20models%20%20STAT%20510_files/readytoenroll250.png"> 
+                </A>               </DIV></DIV></DIV><!-- /sidebar-left -->      
+    <!-- /sidebar-second -->       </DIV><!-- /main -->       <!-- ______________________ FOOTER _______________________ --> 
+        
+<DIV id="footer">
+<P>Copyright © 2018 <A href="http://www.psu.edu/">The Pennsylvania State 
+University</A><BR><A href="http://www.psu.edu/ur/legal.html">Privacy and Legal 
+Statements</A><BR>          Contact the <A 
+href="mailto:gfj100@psu.edu">Department of Statistics Online Programs</A>        
+   </P></DIV><!-- /footer -->     </DIV><!-- /page -->       </BODY></HTML>

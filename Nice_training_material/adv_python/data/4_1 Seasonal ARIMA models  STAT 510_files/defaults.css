@@ -1,0 +1,30 @@
+fieldset {
+	padding: 0.5em; margin-bottom: 1em;
+}
+form {
+	margin: 0px; padding: 0px;
+}
+hr {
+	border: 1px solid gray; border-image: none; height: 1px;
+}
+img {
+	border: 0px currentColor; border-image: none;
+}
+table {
+	border-collapse: collapse;
+}
+th {
+	text-align: left; padding-right: 1em; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 3px; border-bottom-style: solid;
+}
+.clear-block::after {
+	height: 0px; clear: both; display: block; visibility: hidden; content: ".";
+}
+.clear-block {
+	display: inline-block;
+}
+* html .clear-block {
+	height: 1%;
+}
+.clear-block {
+	display: block;
+}

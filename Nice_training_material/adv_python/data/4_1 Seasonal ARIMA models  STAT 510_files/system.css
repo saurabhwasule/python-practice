@@ -1,0 +1,408 @@
+body.drag {
+	cursor: move;
+}
+th.active img {
+	display: inline;
+}
+tr.even {
+	padding: 0.1em 0.6em; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: solid; background-color: rgb(238, 238, 238);
+}
+tr.odd {
+	padding: 0.1em 0.6em; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: solid; background-color: rgb(238, 238, 238);
+}
+tr.drag {
+	background-color: rgb(255, 255, 240);
+}
+tr.drag-previous {
+	background-color: rgb(255, 255, 221);
+}
+td.active {
+	background-color: rgb(221, 221, 221);
+}
+td.checkbox {
+	text-align: center;
+}
+th.checkbox {
+	text-align: center;
+}
+tbody {
+	border-top-color: rgb(204, 204, 204); border-top-width: 1px; border-top-style: solid;
+}
+tbody th {
+	border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: solid;
+}
+thead th {
+	text-align: left; padding-right: 1em; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 3px; border-bottom-style: solid;
+}
+.breadcrumb {
+	padding-bottom: 0.5em;
+}
+div.indentation {
+	margin: -0.4em 0.2em -0.4em -0.4em; padding: 0.42em 0px 0.42em 0.6em; width: 20px; height: 1.7em; float: left;
+}
+div.tree-child {
+	background: url("../../misc/tree.png") no-repeat 11px;
+}
+div.tree-child-last {
+	background: url("../../misc/tree-bottom.png") no-repeat 11px;
+}
+div.tree-child-horizontal {
+	background: url("../../misc/tree.png") no-repeat -11px;
+}
+.error {
+	color: rgb(238, 85, 85);
+}
+div.error {
+	border: 1px solid rgb(221, 119, 119); border-image: none;
+}
+div.error {
+	background: rgb(255, 204, 204); padding: 2px; color: rgb(34, 0, 0);
+}
+tr.error {
+	background: rgb(255, 204, 204); padding: 2px; color: rgb(34, 0, 0);
+}
+.warning {
+	color: rgb(224, 144, 16);
+}
+div.warning {
+	border: 1px solid rgb(240, 192, 32); border-image: none;
+}
+div.warning {
+	background: rgb(255, 255, 221); padding: 2px; color: rgb(34, 34, 0);
+}
+tr.warning {
+	background: rgb(255, 255, 221); padding: 2px; color: rgb(34, 34, 0);
+}
+.ok {
+	color: rgb(0, 128, 0);
+}
+div.ok {
+	border: 1px solid rgb(0, 170, 0); border-image: none;
+}
+div.ok {
+	background: rgb(221, 255, 221); padding: 2px; color: rgb(0, 34, 0);
+}
+tr.ok {
+	background: rgb(221, 255, 221); padding: 2px; color: rgb(0, 34, 0);
+}
+.item-list .icon {
+	color: rgb(85, 85, 85); padding-left: 0.25em; clear: right; float: right;
+}
+.item-list .title {
+	font-weight: bold;
+}
+.item-list ul {
+	margin: 0px 0px 0.75em; padding: 0px;
+}
+.item-list ul li {
+	margin: 0px 0px 0.25em 1.5em; padding: 0px;
+}
+ol.task-list li.active {
+	font-weight: bold;
+}
+.form-item {
+	margin-top: 1em; margin-bottom: 1em;
+}
+tr.odd .form-item {
+	margin-top: 0px; margin-bottom: 0px; white-space: nowrap;
+}
+tr.even .form-item {
+	margin-top: 0px; margin-bottom: 0px; white-space: nowrap;
+}
+tr.merge-down {
+	border-bottom-width: 0px !important;
+}
+tr.merge-down td {
+	border-bottom-width: 0px !important;
+}
+tr.merge-down th {
+	border-bottom-width: 0px !important;
+}
+tr.merge-up {
+	border-top-width: 0px !important;
+}
+tr.merge-up td {
+	border-top-width: 0px !important;
+}
+tr.merge-up th {
+	border-top-width: 0px !important;
+}
+.form-item input.error {
+	border: 2px solid red; border-image: none;
+}
+.form-item textarea.error {
+	border: 2px solid red; border-image: none;
+}
+.form-item select.error {
+	border: 2px solid red; border-image: none;
+}
+.form-item .description {
+	font-size: 0.85em;
+}
+.form-item label {
+	font-weight: bold; display: block;
+}
+.form-item label.option {
+	font-weight: normal; display: inline;
+}
+.form-checkboxes {
+	margin: 1em 0px;
+}
+.form-radios {
+	margin: 1em 0px;
+}
+.form-checkboxes .form-item {
+	margin-top: 0.4em; margin-bottom: 0.4em;
+}
+.form-radios .form-item {
+	margin-top: 0.4em; margin-bottom: 0.4em;
+}
+.marker {
+	color: rgb(255, 0, 0);
+}
+.form-required {
+	color: rgb(255, 0, 0);
+}
+.more-link {
+	text-align: right;
+}
+.more-help-link {
+	text-align: right; font-size: 0.85em;
+}
+.nowrap {
+	white-space: nowrap;
+}
+.item-list .pager {
+	text-align: center; clear: both;
+}
+.item-list .pager li {
+	padding: 0.5em; display: inline; list-style-type: none; background-image: none;
+}
+.pager-current {
+	font-weight: bold;
+}
+.tips {
+	padding-top: 0px; padding-bottom: 0px; font-size: 0.9em; margin-top: 0px; margin-bottom: 0px;
+}
+dl.multiselect dd.b {
+	width: 14em; font-family: inherit; font-size: inherit;
+}
+dl.multiselect dd.b .form-item {
+	width: 14em; font-family: inherit; font-size: inherit;
+}
+dl.multiselect dd.b select {
+	width: 14em; font-family: inherit; font-size: inherit;
+}
+dl.multiselect dd.a {
+	width: 10em;
+}
+dl.multiselect dd.a .form-item {
+	width: 10em;
+}
+dl.multiselect dt {
+	margin: 0px 1em 0px 0px; padding: 0px; line-height: 1.75em; float: left;
+}
+dl.multiselect dd {
+	margin: 0px 1em 0px 0px; padding: 0px; line-height: 1.75em; float: left;
+}
+dl.multiselect .form-item {
+	margin: 0px; height: 1.75em;
+}
+.container-inline div {
+	display: inline;
+}
+.container-inline label {
+	display: inline;
+}
+ul.primary {
+	list-style: none; margin: 5px; padding: 0px 0px 0px 1em; height: auto; line-height: normal; border-bottom-color: rgb(187, 187, 187); border-bottom-width: 1px; border-bottom-style: solid; white-space: nowrap; border-collapse: collapse;
+}
+ul.primary li {
+	display: inline;
+}
+ul.primary li a {
+	border-width: 1px; border-style: solid solid none; border-color: rgb(187, 187, 187); padding: 0px 1em; height: auto; text-decoration: none; margin-right: 0.5em; background-color: rgb(221, 221, 221);
+}
+ul.primary li.active a {
+	border-width: 1px; border-style: solid; border-color: rgb(187, 187, 187) rgb(187, 187, 187) rgb(255, 255, 255); border-image: none; background-color: rgb(255, 255, 255);
+}
+ul.primary li a:hover {
+	border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(238, 238, 238); background-color: rgb(238, 238, 238);
+}
+ul.secondary {
+	margin: 5px; padding: 0.5em 1em; border-bottom-color: rgb(187, 187, 187); border-bottom-width: 1px; border-bottom-style: solid;
+}
+ul.secondary li {
+	padding: 0px 1em; border-right-color: rgb(204, 204, 204); border-right-width: 1px; border-right-style: solid; display: inline;
+}
+ul.secondary a {
+	padding: 0px; text-decoration: none;
+}
+ul.secondary a.active {
+	border-bottom-color: rgb(153, 153, 153); border-bottom-width: 4px; border-bottom-style: solid;
+}
+#autocomplete {
+	border: 1px solid currentColor; border-image: none; overflow: hidden; position: absolute; z-index: 100;
+}
+#autocomplete ul {
+	list-style: none; margin: 0px; padding: 0px;
+}
+#autocomplete li {
+	background: rgb(255, 255, 255); color: rgb(0, 0, 0); white-space: pre; cursor: default;
+}
+#autocomplete li.selected {
+	background: rgb(0, 114, 185); color: rgb(255, 255, 255);
+}
+html.js input.form-autocomplete {
+	background-position: 100% 2px; background-image: url("../../misc/throbber.gif"); background-repeat: no-repeat;
+}
+html.js input.throbbing {
+	background-position: 100% -18px;
+}
+html.js fieldset.collapsed {
+	height: 1em; margin-bottom: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px;
+}
+html.js fieldset.collapsed * {
+	display: none;
+}
+html.js fieldset.collapsed legend {
+	display: block;
+}
+html.js fieldset.collapsible legend a {
+	background: url("../../misc/menu-expanded.png") no-repeat 5px 75%; padding-left: 15px;
+}
+html.js fieldset.collapsed legend a {
+	background-position: 5px 50%; background-image: url("../../misc/menu-collapsed.png");
+}
+* html.js fieldset.collapsed legend {
+	display: inline;
+}
+* html.js fieldset.collapsed legend * {
+	display: inline;
+}
+* html.js fieldset.collapsed table * {
+	display: inline;
+}
+html.js fieldset.collapsible {
+	position: relative;
+}
+html.js fieldset.collapsible legend a {
+	display: block;
+}
+html.js fieldset.collapsible .fieldset-wrapper {
+	overflow: auto;
+}
+.resizable-textarea {
+	width: 95%;
+}
+.resizable-textarea .grippie {
+	background: url("../../misc/grippie.png") no-repeat center 2px rgb(238, 238, 238); border-width: 0px 1px 1px; border-style: solid; border-color: rgb(221, 221, 221); border-image: none; height: 9px; overflow: hidden; cursor: s-resize;
+}
+html.js .resizable-textarea textarea {
+	width: 100%; margin-bottom: 0px; display: block;
+}
+.draggable a.tabledrag-handle {
+	margin: -0.4em 0px -0.4em -0.5em; padding: 0.42em 1.5em 0.42em 0.5em; height: 1.7em; text-decoration: none; float: left; cursor: move;
+}
+a.tabledrag-handle:hover {
+	text-decoration: none;
+}
+a.tabledrag-handle .handle {
+	background: url("../../misc/draggable.png") no-repeat 0px 0px; width: 13px; height: 13px; margin-top: 4px;
+}
+a.tabledrag-handle-hover .handle {
+	background-position: 0px -20px;
+}
+.joined + .grippie {
+	background-position: center 1px; height: 5px; margin-bottom: -2px;
+}
+.teaser-checkbox {
+	padding-top: 1px;
+}
+div.teaser-button-wrapper {
+	margin: 0px; padding-right: 5%; float: right;
+}
+.teaser-checkbox div.form-item {
+	margin: 0px 5% 0px 0px; padding: 0px; float: right;
+}
+textarea.teaser {
+	display: none;
+}
+html.js .no-js {
+	display: none;
+}
+.progress {
+	font-weight: bold;
+}
+.progress .bar {
+	background: url("../../misc/progress.gif") rgb(255, 255, 255); margin: 0px 0.2em; border: 1px solid rgb(0, 55, 90); border-image: none; height: 1.5em;
+}
+.progress .filled {
+	background: rgb(0, 114, 185); width: 0%; height: 1em; border-bottom-color: rgb(0, 74, 115); border-bottom-width: 0.5em; border-bottom-style: solid;
+}
+.progress .percentage {
+	float: right;
+}
+.progress-disabled {
+	float: left;
+}
+.ahah-progress {
+	float: left;
+}
+.ahah-progress .throbber {
+	background: url("../../misc/throbber.gif") no-repeat 0px -18px; margin: 2px; width: 15px; height: 15px; float: left;
+}
+tr .ahah-progress .throbber {
+	margin: 0px 2px;
+}
+.ahah-progress-bar {
+	width: 16em;
+}
+#first-time strong {
+	padding: 1.5em 0px 0.5em; display: block;
+}
+tr.selected td {
+	background: rgb(255, 255, 204);
+}
+table.sticky-header {
+	background: rgb(255, 255, 255); margin-top: 0px;
+}
+.install#clean-url {
+	display: none;
+}
+html.js .js-hide {
+	display: none;
+}
+#system-modules div.incompatible {
+	font-weight: bold;
+}
+#system-themes-form div.incompatible {
+	font-weight: bold;
+}
+span.password-strength {
+	visibility: hidden;
+}
+input.password-field {
+	margin-right: 10px;
+}
+div.password-description {
+	margin: 4px 0px 0px; padding: 0px 2px; font-size: 0.85em; max-width: 500px;
+}
+div.password-description ul {
+	margin-bottom: 0px;
+}
+.password-parent {
+	margin: 0px;
+}
+input.password-confirm {
+	margin-right: 10px;
+}
+.confirm-parent {
+	margin: 5px 0px 0px;
+}
+span.password-confirm {
+	visibility: hidden;
+}
+span.password-confirm span {
+	font-weight: normal;
+}

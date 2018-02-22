@@ -1,0 +1,33 @@
+.node-unpublished {
+	background-color: rgb(255, 244, 244);
+}
+.preview .node {
+	background-color: rgb(255, 255, 234);
+}
+#node-admin-filter ul {
+	margin: 0px; padding: 0px; width: 100%; list-style-type: none;
+}
+#node-admin-buttons {
+	clear: right; margin-left: 0.5em; float: left;
+}
+td.revision-current {
+	background: rgb(255, 255, 204);
+}
+.node-form .form-text {
+	width: 95%; display: block;
+}
+.node-form .container-inline .form-text {
+	width: auto; display: inline;
+}
+.node-form .standard {
+	clear: both;
+}
+.node-form textarea {
+	width: 95%; display: block;
+}
+.node-form .attachments fieldset {
+	float: none; display: block;
+}
+.terms-inline {
+	display: inline;
+}

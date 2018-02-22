@@ -1,0 +1,1 @@
+{"class":"examples.UnaryTransformerExample$MyTransformer","timestamp":1492914308321,"sparkVersion":"2.1.0","uid":"myT_1bdc686b289a","paramMap":{"outputCol":"output","inputCol":"input","shift":0.5}}

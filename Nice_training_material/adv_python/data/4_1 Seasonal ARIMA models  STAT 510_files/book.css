@@ -1,0 +1,36 @@
+.book-navigation .menu {
+	padding: 1em 0px 0px 3em; border-top-color: rgb(136, 136, 136); border-top-width: 1px; border-top-style: solid;
+}
+.book-navigation .page-links {
+	padding: 0.5em; text-align: center; border-top-color: rgb(136, 136, 136); border-bottom-color: rgb(136, 136, 136); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid;
+}
+.book-navigation .page-previous {
+	width: 42%; text-align: left; float: left; display: block;
+}
+.book-navigation .page-up {
+	margin: 0px 5%; width: 4%; float: left; display: block;
+}
+.book-navigation .page-next {
+	width: 42%; text-align: right; float: right; display: block;
+}
+#book-outline {
+	min-width: 56em;
+}
+.book-outline-form .form-item {
+	margin-top: 0px; margin-bottom: 0px;
+}
+#edit-book-bid-wrapper .description {
+	clear: both;
+}
+#book-admin-edit select {
+	margin-right: 24px;
+}
+#book-admin-edit select.progress-disabled {
+	margin-right: 0px;
+}
+#book-admin-edit tr.ahah-new-content {
+	background-color: rgb(255, 255, 221);
+}
+#book-admin-edit .form-item {
+	float: left;
+}

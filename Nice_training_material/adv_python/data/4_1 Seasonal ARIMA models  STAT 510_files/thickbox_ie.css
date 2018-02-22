@@ -1,0 +1,21 @@
+* html #TB_overlay {
+	position: absolute;
+}
+* html #TB_window {
+	position: absolute;
+}
+* html #TB_load {
+	position: absolute;
+}
+* html #TB_HideSelect {
+	position: absolute;
+}
+* html #TB_iframeContent {
+	margin-bottom: 1px;
+}
+.TB_overlayBG {
+	
+}
+#TB_HideSelect {
+	
+}

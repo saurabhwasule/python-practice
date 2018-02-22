@@ -1,0 +1,27 @@
+.print-link {
+	text-align: right; padding-bottom: 0.5em; display: block;
+}
+div#block-print-0 span {
+	display: block;
+}
+.print_html {
+	margin-left: 1em;
+}
+.print_mail {
+	margin-left: 1em;
+}
+.print_pdf {
+	margin-left: 1em;
+}
+.print-syslink {
+	margin-right: 1em;
+}
+img.print-icon {
+	vertical-align: middle;
+}
+img.print-icon-margin {
+	padding-right: 4px;
+}
+label.printmail-label {
+	width: 175px; float: left;
+}

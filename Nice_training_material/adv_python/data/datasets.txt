@@ -1,0 +1,15 @@
+I would start here: https://www.kaggle.com/c/msdchallenge but it depends on what you actually want to do... What does it mean "places"?
+Regards,
+Radek
+4 years ago
+Mona Nasery
+McMaster University
+Please check also these links:
+http://kevinchai.net/datasets
+http://datamob.org/datasets/show/music-recommendation-datasets
+https://gist.github.com/entaroadun/1653794
+3 years ago
+Danilo C. Dantas
+HEC Montréal - École des Hautes Études commerciales
+Hello Sapan, if you're still looking for it, you may want to take a look at these resources:
+http://www.ismir.net/resources.html#datasets

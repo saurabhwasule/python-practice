@@ -1,0 +1,806 @@
+Microsoft Windows [Version 6.3.9600]
+(c) 2013 Microsoft Corporation. All rights reserved.
+
+D:\PPT>cd python/hands
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> import glob
+>>> glob.glob("*")
+['data', 'DAY1.txt', 'DAY1.txt.bak', 'DAY2.txt', 'first.py',
+ 'pkg', 'quick_datastructure.txt', 'reference', 'syn.txt']
+>>> with open("DAY1.txt","rt") as f:
+...     lines = f.readlines()
+...
+>>> len(lines)
+879
+>>> d = {  t[0]+1:len(t[1])    for t in enumerate(lines)}
+>>> len(d)
+879
+>>> d = {index+1:len(line) for index,line in enumerate(lines
+)}
+>>> len(d)
+879
+>>> dt = d.items()
+>>> dt[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'dict_items' object does not support indexing
+>>> dt = list(d.items())
+>>> dt[0]
+(1, 37)
+>>> sd = sorted(dt, key=lambda t:t[1])
+>>> sd[-1]
+(811, 61)
+>>>
+>>>
+>>> d = {index+1:len(line) for index,line in enumerate(lines
+)}
+>>> dt = list(d.items())
+>>> sd = sorted(dt, key=lambda t:t[1])
+>>> sd[-1]
+(811, 61)
+>>> from pkg.mex import get_max_line_number
+>>> get_max_line_number("DAY1.txt")
+811
+>>> get_max_line_number("DAY2.txt")
+713
+>>> get_max_line_number("first.py")
+49
+>>> get_max_line_number("first.py")
+52
+>>> import re
+>>> dir(re)
+['A', 'ASCII', 'DEBUG', 'DOTALL', 'I', 'IGNORECASE', 'L', 'L
+OCALE', 'M', 'MULTILINE', 'S', 'Scanner', 'T', 'TEMPLATE', '
+U', 'UNICODE', 'VERBOSE', 'X', '_MAXCACHE', '__all__', '__bu
+iltins__', '__cached__', '__doc__', '__file__', '__loader__'
+, '__name__', '__package__', '__spec__', '__version__', '_al
+phanum_bytes', '_alphanum_str', '_cache', '_cache_repl', '_c
+ompile', '_compile_repl', '_expand', '_locale', '_pattern_ty
+pe', '_pickle', '_subx', 'compile', 'copyreg', 'error', 'esc
+ape', 'findall', 'finditer', 'fullmatch', 'match', 'purge',
+'search', 'split', 'sre_compile', 'sre_parse', 'sub', 'subn'
+, 'sys', 'template']
+>>> s = "Hello World"
+>>> help(re.findall)
+Help on function findall in module re:
+
+findall(pattern, string, flags=0)
+    Return a list of all non-overlapping matches in the stri
+ng.
+
+    If one or more capturing groups are present in the patte
+rn, return
+    a list of groups; this will be a list of tuples if the p
+attern
+    has more than one group.
+
+    Empty matches are included in the result.
+
+>>> re.findall(r"\w+", s)
+['Hello', 'World']
+>>> re.split(r"\s+", s)
+['Hello', 'World']
+>>> s
+'Hello World'
+>>> re.sub("World","Earth", s)
+'Hello Earth'
+>>> s = "Hello Hello World World"
+>>> re.sub(r"(\w+) \1",r"\1", s)
+'Hello World'
+>>> s = "Name:XYZ"
+>>> s = "Name:XYZ,Name:ABC"
+>>> re.findall(r"Name:(\w+)",s)
+['XYZ', 'ABC']
+>>> s = "Name:XYZ,Age=20|Name:ABC,Age=30"
+>>> sn = re.findall(r"Name:(\w+)",s)
+>>> sn
+['XYZ', 'ABC']
+>>> sd = re.findall(r"Age:(\d+)",s)
+>>> sd
+[]
+>>> sd = re.findall(r"Age=(\d+)",s)
+>>> sd
+['20', '30']
+>>> dict(zip(sn,sd))
+{'XYZ': '20', 'ABC': '30'}
+>>> dict(zip(sn,[int(e) for e in sd]))
+{'XYZ': 20, 'ABC': 30}
+>>> s = "Name:XYZ,Age=20,salary=200|Name:ABC,Age=30,salary=2
+00"
+>>> list(zip([10,20,30],[100,200,300]))
+[(10, 100), (20, 200), (30, 300)]
+>>> help(zip)
+Help on class zip in module builtins:
+
+class zip(object)
+ |  zip(iter1 [,iter2 [...]]) --> zip object
+ |
+ |  Return a zip object whose .__next__() method returns a t
+uple where
+ |  the i-th element comes from the i-th iterable argument.
+ The .__next__()
+ |  method continues until the shortest iterable in the argu
+ment sequence
+ |  is exhausted and then it raises StopIteration.
+ |
+ |  Methods defined here:
+ |
+ |  __getattribute__(self, name, /)
+ |      Return getattr(self, name).
+ |
+
+>>> list(zip([10,20,30],[100,200,300], [2,3,4]))
+[(10, 100, 2), (20, 200, 3), (30, 300, 4)]
+>>> s = "Name:XYZ,Age=20,salary=200|Name:ABC,Age=30,salary=2
+00"
+>>> sn = re.findall(r"Name:(\w+)",s)
+>>> sd = re.findall(r"Age:(\d+)",s)
+>>> sa = re.findall(r"Age=(\d+)",s)
+>>> ss = re.findall(r"salary=(\d+)",s)
+>>> sn
+['XYZ', 'ABC']
+>>> sa
+['20', '30']
+>>> ss
+['200', '200']
+>>> { t[0]: {'age':t[1],'salary':t[2]} for t in zip(sn,sa,ss
+)  }
+{'XYZ': {'age': '20', 'salary': '200'}, 'ABC': {'age': '30',
+ 'salary': '200'}}
+>>>
+>>> { n: {'age':a,'salary':s} for n,a,s in zip(sn,sa,ss)  }
+{'XYZ': {'age': '20', 'salary': '200'}, 'ABC': {'age': '30',
+ 'salary': '200'}}
+>>>
+>>> sx = re.findall(r"Name:(\w+),Age=(\d+),salary=(\d+)", s)
+
+>>> sx
+[('XYZ', '20', '200'), ('ABC', '30', '200')]
+>>> { n: {'age':a,'salary':s} for n,a,s in sx  }
+{'XYZ': {'age': '20', 'salary': '200'}, 'ABC': {'age': '30',
+ 'salary': '200'}}
+>>>
+>>>
+>>>
+>>> sx = re.findall(r"Name:(\w+),Age=(\d+),salary=(\d+)", s)
+
+>>> { n: {'age':a,'salary':s} for n,a,s in sx  }
+{'XYZ': {'age': '20', 'salary': '200'}, 'ABC': {'age': '30',
+ 'salary': '200'}}
+>>>
+>>>
+>>> { i: {'name':t[0],'age':t[1],'salary':t[2]} for i,t in e
+numerate(sx) }
+{0: {'age': '20', 'salary': '200', 'name': 'XYZ'}, 1: {'age'
+: '30', 'salary': '200', 'name': 'ABC'}}
+>>> from sqlite3 import connect
+>>> con = connect(r"sample.db")
+>>> cur = con.cursor()
+>>> cur.execute("create table emp (id int, name varchar(20),
+age int)")
+<sqlite3.Cursor object at 0x000000B9EC9247A0>
+>>> cur.execute("insert into emp values (1,'ABC',100)")
+<sqlite3.Cursor object at 0x000000B9EC9247A0>
+>>> cur.execute("insert into emp values (?,?,?)", (2, "XYZ",
+20) )
+<sqlite3.Cursor object at 0x000000B9EC9247A0>
+>>> con.commit()
+>>> q = cur.execute("select * from emp")
+>>> rows = list(q.fetchall())
+>>> rows
+[(1, 'ABC', 100), (2, 'XYZ', 20)]
+>>> sorted(rows)
+[(1, 'ABC', 100), (2, 'XYZ', 20)]
+>>> sorted(rows, key=lambda t:t[2])
+[(2, 'XYZ', 20), (1, 'ABC', 100)]
+>>> [ row[1] for row in rows]
+['ABC', 'XYZ']
+>>>
+>>>
+>>> l = [1,2,3]
+>>> res = [e*e for e in l]
+>>> res
+[1, 4, 9]
+>>> g = (e*e for  in l)
+  File "<stdin>", line 1
+    g = (e*e for  in l)
+                   ^
+SyntaxError: invalid syntax
+>>> g = (e*e for e in l)
+>>> g
+<generator object <genexpr> at 0x000000B9EC5837D8>
+>>> list(g)
+[1, 4, 9]
+>>> g = (e*e for e in l)
+>>> for e in g:
+...     print(e)
+...
+1
+4
+9
+>>> g = (e*e for e in l)
+>>> i = iter(g)
+>>> next(i)
+1
+>>> next(i)
+4
+>>> next(i)
+9
+>>> next(i)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+>>> 11111111111111111111111111111111111111111111111111111111
+111111111111111111111111111111111111111111111111111111111111
+111111111111111111111111111111111111111111111111111111111111
+111111111111111111111111111111**11111111111111111111
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyboardInterrupt
+>>>
+>>>
+>>> import itertools
+>>> g = (e**e for e in itertools.count(1))
+>>> for e in g:
+... p
+  File "<stdin>", line 2
+    p
+    ^
+IndentationError: expected an indented block
+>>> i = iter(g)
+>>> next(i)
+1
+>>> next(i)
+4
+>>> next(i)
+27
+>>> list(itertools.islice(i,20))
+[256, 3125, 46656, 823543, 16777216, 387420489, 10000000000,
+ 285311670611, 8916100448256, 302875106592253, 1111200682555
+8016, 437893890380859375, 18446744073709551616, 827240261886
+336764177, 39346408075296537575424, 197841965566031358912397
+9, 104857600000000000000000000, 5842587018385982521381124421
+, 341427877364219557396646723584, 20880467999847912034355032
+910567]
+>>> list(itertools.islice(i,20))
+[1333735776850284124449081472843776, 88817841970012523233890
+533447265625, 6156119580207157310796674288400203776, 4434264
+88243037769948249630619149892803, 33145523113253374862572728
+253364605812736, 2567686153161211134561828214731016126483469
+, 205891132094649000000000000000000000000000000, 17069174130
+723235958610643029059314756044734431, 1461501637330902918203
+684832716283019655932542976, 1291100400877610278396160299346
+64535539337183380513, 11756638905368616011414050501310355554
+617941909569536, 1102507499354148695951786433413508348166942
+596435546875, 1063873589237165248077134757524563937401678556
+29859291136, 10555134955777783414078330085995832946127396083
+370199442517, 1075911801979993982060429252856123779115487368
+830416064610304, 1125951474620711925397894489888890599301921
+05219196517009951959, 12089258196146291747061760000000000000
+000000000000000000000000000, 1330877630632711998713399240963
+346255985889330161650994325137953641, 1501309375452965723567
+71972164254457814047970568738777235893533016064, 17343773367
+030267519903781288812032158308062539012091953077767198995507
+]
+>>> len(str(list(itertools.islice(i,20))[-1]))
+114
+>>> len(str(list(itertools.islice(i,20))[-1]))
+160
+>>> len(str(list(itertools.islice(i,20))[-1]))
+208
+>>> len(str(list(itertools.islice(i,20))[-1]))
+258
+>>> len(str(list(itertools.islice(i,20))[-1]))
+309
+>>> len(str(list(itertools.islice(i,20))[-1]))
+361
+>>> len(str(list(itertools.islice(i,200))[-1]))
+930
+>>> len(str(list(itertools.islice(i,2000))[-1]))
+7972
+>>> len(str(list(itertools.islice(i,2000))[-1]))
+15881
+>>> g = (e**e for e in itertools.count(1))
+>>> def g1():
+...     for e in itertools.count(1):
+...             yield e**e
+...
+>>> i = g1()
+>>> len(str(list(itertools.islice(i,2000))[-1]))
+6603
+>>> from pkg.MyInt import MyInt
+>>> a = MyInt(2)
+>>> b = MyInt(3)
+>>> a.add(b)
+5
+>>> print(a)
+MyInt(2)
+>>> MyInt.__init__(a,2)
+>>> a.value
+2
+>>> b.value
+3
+>>> MyInt.add(a,b)
+5
+>>> MyInt.__str__(a)
+'MyInt(2)'
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import MyInt
+>>> a = MyInt(2)
+>>> b = MyInt(3)
+>>> c = a+b
+>>> print(c)
+MyInt(5)
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import MyInt
+>>> a = MyInt(2)
+>>> b = MyInt(3)
+>>> c = a-b
+>>> print(c)
+MyInt(-1)
+>>> a1 = MyInt(2)
+>>> a == a1
+False
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import MyInt
+>>> a = MyInt(2)
+>>> b = MyInt(3)
+>>> a+b == MyInt(5)
+True
+>>> c = a+b
+>>> c == MyInt(5)
+True
+>>> MyInt.__eq__(c, MyInt(5))
+True
+>>> dir(list)
+['__add__', '__class__', '__contains__', '__delattr__', '__d
+elitem__', '__dir__', '__doc__', '__eq__', '__format__', '__
+ge__', '__getattribute__', '__getitem__', '__gt__', '__hash_
+_', '__iadd__', '__imul__', '__init__', '__iter__', '__le__'
+, '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__re
+duce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmu
+l__', '__setattr__', '__setitem__', '__sizeof__', '__str__',
+ '__subclasshook__', 'append', 'clear', 'copy', 'count', 'ex
+tend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort'
+]
+>>> [1,2] * 5
+[1, 2, 1, 2, 1, 2, 1, 2, 1, 2]
+>>> print(a)
+MyInt(2)
+>>> print(b)
+MyInt(3)
+>>> a < b
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unorderable types: MyInt() < MyInt()
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import MyInt
+>>> a = MyInt(2)
+>>> b = MyInt(3)
+>>> a < b
+True
+>>> a > b
+False
+>>> a <= b
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unorderable types: MyInt() <= MyInt()
+>>> a >=b
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unorderable types: MyInt() >= MyInt()
+>>> quir()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'quir' is not defined
+>>> quit()
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> from pkg.MyInt import MyInt
+>>> a = MyInt(2)
+>>> b = MyInt(3)
+>>> a > b
+False
+>>> a != b
+True
+>>> a <= b
+True
+>>> a >=b
+False
+>>> a < b
+True
+>>> print(a)
+MyInt(2)
+>>>
+>>>
+>>> (1,2,3,4)
+(1, 2, 3, 4)
+>>> (1,2,3)
+(1, 2, 3)
+>>> type( (1,2,3) )
+<class 'tuple'>
+>>> type( (1,2) )
+<class 'tuple'>
+>>> type( (1) )
+<class 'int'>
+>>> type( (1,) )
+<class 'tuple'>
+>>> l = [1,2,3]
+>>> l[0]
+1
+>>> len(l)
+3
+>>> quit()
+
+D:\PPT\python\hands>python -m unittest -v mytest
+test_add (mytest.MyTest)
+Testing addition functionality ... ok
+
+------------------------------------------------------------
+----------
+Ran 1 test in 0.000s
+
+OK
+
+D:\PPT\python\hands>python -m unittest -v mytest
+test_add (mytest.MyTest)
+Testing addition functionality ... ok
+test_less (mytest.MyTest)
+Testing less functionality ... ok
+
+------------------------------------------------------------
+----------
+Ran 2 tests in 0.031s
+
+OK
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>> raise IndentationError
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndentationError: None
+>>>  a = 1
+  File "<stdin>", line 1
+    a = 1
+    ^
+IndentationError: unexpected indent
+>>> class MyException(Exception):
+...     pass
+...
+>>> def f():
+...     raise MyException("OMG")
+...
+>>> f()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in f
+__main__.MyException: OMG
+>>>
+>>>
+>>> try:
+...     f()
+... except Exception:
+...     print("haha")
+...
+haha
+>>> try:
+...     f()
+... except Exception as ex:
+...     print(ex)
+... finally:
+...     print("allways executed")
+...
+OMG
+allways executed
+>>> quit()
+
+D:\PPT\python\hands>python -m unittest -v mytest
+test_add (mytest.MyTest)
+Testing addition functionality ... ok
+test_less (mytest.MyTest)
+Testing less functionality ... FAIL
+
+============================================================
+==========
+FAIL: test_less (mytest.MyTest)
+Testing less functionality
+------------------------------------------------------------
+----------
+Traceback (most recent call last):
+  File "D:\PPT\python\hands\mytest.py", line 16, in test_les
+s
+    self.assertEqual(a<b, False)
+AssertionError: True != False
+
+------------------------------------------------------------
+----------
+Ran 2 tests in 0.016s
+
+FAILED (failures=1)
+
+D:\PPT\python\hands>python
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [M
+SC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more in
+formation.
+>>>
+>>> class A:
+...     pass
+...
+>>> class B(A):
+...     pass
+...
+>>> class C:
+...     pass
+...
+>>> class D(B,C,A):
+...     pass
+...
+>>> d = D()
+>>> d.__class__
+<class '__main__.D'>
+>>> d.__class__.__mro__
+(<class '__main__.D'>, <class '__main__.B'>, <class '__main_
+_.C'>, <class '__main__.A'>, <class 'object'>)
+>>> class D(A,B,C):
+...     pass
+...
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: Cannot create a consistent method resolution
+order (MRO) for bases B, A, C
+>>> class D(C,B,A):
+...     pass
+...
+>>> d = D()
+>>> d.__class__.__mro__
+(<class '__main__.D'>, <class '__main__.C'>, <class '__main_
+_.B'>, <class '__main__.A'>, <class 'object'>)
+>>>
+>>>
+>>> import os
+>>> os.environ
+environ({'PROCESSOR_REVISION': '3708', 'GROOVY_HOME': 'C:\\G
+roovy\\Groovy', 'PROMPT': '$P$G', 'TEMP': 'C:\\Users\\das\\A
+ppData\\Local\\Temp', 'COMMONPROGRAMFILES(X86)': 'C:\\Progra
+m Files (x86)\\Common Files', 'USERNAME': 'das', 'HOMEPATH':
+ '\\Users\\das', 'PATHEXT': '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.
+JS;.JSE;.WSF;.WSH;.MSC;.PY', 'TMP': 'C:\\Users\\das\\AppData
+\\Local\\Temp', 'PROCESSOR_LEVEL': '6', 'SYSTEMROOT': 'C:\\W
+indows', 'SESSIONNAME': 'Console', 'SCALA_HOME': 'C:\\scala-
+2.11.4', 'JRE_HOME': 'C:\\Program Files\\Java\\jre1.8.0_65',
+ 'COMMONPROGRAMFILES': 'C:\\Program Files\\Common Files', 'P
+ROCESSOR_IDENTIFIER': 'Intel64 Family 6 Model 55 Stepping 8,
+ GenuineIntel', 'USERDOMAIN_ROAMINGPROFILE': 'home-pc', 'HAD
+OOP_HOME': 'C:\\hadoop-2.3.0', 'APPDATA': 'C:\\Users\\das\\A
+ppData\\Roaming', 'FP_NO_HOST_CHECK': 'NO', 'SYSTEMDRIVE': '
+C:', 'PROCESSOR_ARCHITECTURE': 'AMD64', 'COMSPEC': 'C:\\Wind
+ows\\system32\\cmd.exe', 'ALLUSERSPROFILE': 'C:\\ProgramData
+', 'SPARK_HOME': 'C:\\spark-1.2.1', 'CYGWIN': 'mintty', 'JAV
+A_HOME': 'C:\\Program Files\\Java\\jdk1.8.0_65', 'PROGRAMW64
+32': 'C:\\Program Files', 'NUMBER_OF_PROCESSORS': '4', 'PROG
+RAMFILES': 'C:\\Program Files', 'COMMONPROGRAMW6432': 'C:\\P
+rogram Files\\Common Files', 'OS': 'Windows_NT', 'WINDIR': '
+C:\\Windows', 'HOMEDRIVE': 'C:', 'PATH': 'C:\\Program Files\
+\Java\\jdk1.8.0_65\\bin;C:\\ProgramData\\Oracle\\Java\\javap
+ath;C:\\Perl64\\site\\bin;C:\\Perl64\\bin;C:\\Program Files
+(x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel
+\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:
+\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowe
+rShell\\v1.0\\;C:\\Program Files\\R\\Rtools\\bin;C:\\Program
+ Files\\R\\Rtools\\gcc-4.6.3\\bin;C:\\hadoop-2.3.0\\sbin;C:\
+\hadoop-2.3.0\\bin;C:\\Program Files (x86)\\sbt\\bin;c:\\sca
+la-2.11.4\\bin;C:\\Ruby21-x64\\bin;C:\\Python35;C:\\Python35
+\\Scripts;C:\\Program Files\\R\\R-3.2.2\\bin;C:\\Program Fil
+es\\R\\R-3.2.2\\bin\\x64;C:\\Groovy\\Groovy\\bin;C:\\Program
+ Files (x86)\\Microsoft SDKs\\F#\\3.1\\Framework\\v4.0;C:\\s
+park-1.2.1\\bin;C:\\Users\\das\\bin;C:\\Groovy\\gradle\\bin;
+C:\\Groovy\\grails\\bin;C:\\users\\das\\bin;C:\\Program File
+s (x86)\\WinMerge;C:\\Program Files (x86)\\GnuWin32\\bin;C:\
+\Python27;C:\\Python27\\Scripts;C:\\Perl64\\bin;C:\\Program
+Files (x86)\\Skype\\Phone\\;C:\\Program Files\\nodejs\\;C:\\
+indigoampp\\apache-2.2.15\\bin;C:\\indigoampp\\mysql-5.1.30\
+\bin;C:\\UnxUtils\\usr\\local\\wbin;C:\\Anaconda2;C:\\Anacon
+da2\\Scripts;C:\\apache-maven-3.0.5\\bin;c:\\eclipse\\binC:\
+\indigoampp\\apache-2.2.15\\bin;C:\\indigoampp\\mysql-5.1.30
+\\bin;C:\\Program Files (x86)\\OpenSSH\\bin;c:\\eclipse\\bin
+;C:\\Users\\das\\AppData\\Roaming\\npm;c:\\ffmpeg\\bin', 'PU
+BLIC': 'C:\\Users\\Public', 'PROGRAMDATA': 'C:\\ProgramData'
+, 'LOCALAPPDATA': 'C:\\Users\\das\\AppData\\Local', 'GRAILS_
+HOME': 'C:\\Groovy\\grails', 'COMPUTERNAME': 'HOME-PC', 'PSM
+ODULEPATH': 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\
+\Modules\\', 'PROGRAMFILES(X86)': 'C:\\Program Files (x86)',
+ 'SBT_HOME': 'C:\\Program Files (x86)\\sbt\\', 'LOGONSERVER'
+: '\\\\HOME-PC', 'USERDOMAIN': 'home-pc', 'USERPROFILE': 'C:
+\\Users\\das'})
+>>>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

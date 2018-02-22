@@ -1,0 +1,66 @@
+[
+	{
+		"details": {
+			"children": [],
+			"lastName": "Smith",
+			"address": {
+				"streetAddress": "21 2nd Street",
+				"postalCode": "10021-3100",
+				"state": "NY",
+				"city": "New York"
+			},
+			"age": 25,
+			"salary": 123.5,
+			"spouse": null,
+			"firstName": "John",
+			"isAlive": true,
+			"phoneNumbers": [
+				{
+					"type": "home",
+					"number": "212 555-1234"
+				},
+				{
+					"type": "office",
+					"number": "646 555-4567"
+				},
+				{
+					"type": "mobile",
+					"number": "123 456-7890"
+				}
+			]
+		},
+		"empId": 1
+	},
+	{
+		"details": {
+			"children": [],
+			"lastName": "Smith",
+			"address": {
+				"streetAddress": "21 2nd Street",
+				"postalCode": "10021-3100",
+				"state": "NY",
+				"city": "New York"
+			},
+			"age": 25,
+			"salary": 123.5,
+			"spouse": null,
+			"firstName": "Johns",
+			"isAlive": true,
+			"phoneNumbers": [
+				{
+					"type": "home",
+					"number": "212 555-1234"
+				},
+				{
+					"type": "office",
+					"number": "646 555-4567"
+				},
+				{
+					"type": "mobile",
+					"number": "123 456-7890"
+				}
+			]
+		},
+		"empId": 20
+	}
+]
