@@ -5,9 +5,12 @@ from xlsxwriter.workbook import Workbook
 
 workbook = Workbook('Test.xlsx')
 for ext in ['csv','sql']:
-    for csvfile in glob.glob(os.path.join('.', '*.'+ext)):
+    for csvfile in glob.glob(os.path.join('.', '1.'+ext)):
         filename=csvfile.replace(".\\","")
         extension=filename.split(".")[1]
+        if extension=='sql':
+            filename='SQL'
+
         worksheet = workbook.add_worksheet(os.path.splitext(filename)[0])  # worksheet with csv file name
         with open(csvfile, 'rt',encoding='utf8') as f:
             if extension=='csv':
